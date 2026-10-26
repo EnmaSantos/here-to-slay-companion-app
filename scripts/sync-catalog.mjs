@@ -1,7 +1,14 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import { selectVerifiedCards } from "../lib/verified-catalog.mjs";
 const source =
   "https://bslsfzvnanjzjrgyvrdj.supabase.co/functions/v1/cards-api";
 const sets = ["base-game", "warrior-and-druid", "berserkers-and-necromancers"];
+const inventory = JSON.parse(
+  await readFile(
+    new URL("../backend/data/verified-inventory.json", import.meta.url),
+    "utf8",
+  ),
+);
 const cards = [];
 for (let offset = 0; ; offset += 100) {
   const response = await fetch(
@@ -13,9 +20,7 @@ for (let offset = 0; ; offset += 100) {
   cards.push(...page.data);
   if (!page.pagination.hasMore) break;
 }
-const supported = cards.filter(
-  (c) => c.type !== "rule-card" && c.sets.some((s) => sets.includes(s)),
-);
+const supported = selectVerifiedCards(cards, inventory);
 for (const set of sets) {
   const expected = set === "base-game" ? 115 : 31;
   const quantity = supported

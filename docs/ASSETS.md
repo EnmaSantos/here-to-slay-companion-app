@@ -1,28 +1,36 @@
-# Asset provenance
+# Card inventory and artwork audit
 
-## Card data
+Reviewed October 25, 2026.
 
-- API: https://bslsfzvnanjzjrgyvrdj.supabase.co/functions/v1/cards-api
-- Repository: https://github.com/EnmaSantos/here-to-slay-api
-- Upstream: Unstable Games Wiki; source attribution and individual source URLs remain in `backend/data/catalog.json`.
-- The source does not declare an open license for card text/artwork. Unstable Games owns the original game content.
-- The current snapshot is the API's July 13, 2026 dataset. Main-product quantities are used once per selected set; separate printing dates do not add copies.
+The [existing read-only API](https://github.com/EnmaSantos/here-to-slay-api) supplies card records and external `imageUrl` links. It does not host the image bytes. The current data snapshot is unchanged in substance from the API's July 13 dataset; it was fetched again for this audit.
 
-## Original fallback portrait atlas
+## Published retail cards only
 
-Saved source asset: `public/art/class-atlas.png`. Optimized browser asset: `public/art/class-atlas.webp` (WebP re-encoding; composition unchanged).
+Names, types, and copy counts match these three published inventories:
 
-Generated using the built-in image-generation tool for this development preview. These are original class/creature portraits, not the official card artwork. Every fallback card displays **PREVIEW ART**. The source wiki returned 403 for image requests during verification; source image URLs are preserved and can be re-enabled after availability is restored.
+- [Base game inventory](https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_Base_Deck_-_Inventory_List): 95 distinct playable definitions; 115 main cards, 15 monsters, 6 leaders.
+- [Warriors & Druids inventory](https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_-_Warrior_and_Druid_Expansion_-_Inventory_List): 35 definitions; 31 main cards, 2 monsters, 2 leaders.
+- [Berserkers & Necromancers inventory](https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_Dragon_Berserkers_and_Necromancers_Expansion_-_Inventory_List): 33 definitions; 31 main cards, 2 monsters, 2 leaders.
 
-Prompt:
+All 163 included definitions match those inventories. No invented card definitions were found. The unfamiliar portraits in the earlier preview were generated stand-ins; they have been removed from the UI and public assets.
 
-> Use case: stylized-concept. Asset type: ONE seamless game UI portrait sprite-sheet atlas for a whimsical fantasy animal card game. Make a precisely aligned 5-column by 3-row grid, 15 equal square cells, landscape image 1600x960. No gutters, no borders, no text, no numbers, no lettering, no logos. Each cell is a richly drawn centered bust portrait of an ORIGINAL adorable but fierce animal fantasy adventurer or creature, softly textured parchment background of a different muted earthy jewel color. Consistent charming hand-inked illustrative style, bold dark aubergine outlines, warm cream highlights, sophisticated cozy fantasy board-game art, clean readable silhouettes, expressive eyes. Keep each subject fully within its own square. Cell order left to right, top to bottom: row 1: bear fighter with a broad axe on burnt terracotta background; unicorn guardian with round golden shield on teal background; fox ranger with bow and hood on sage background; rabbit wizard in purple pointed hat holding glowing crystal on lavender background; stealthy black cat thief with daggers on indigo background. Row 2: squirrel bard playing lute on mustard background; armored lynx warrior with two swords on copper background; antlered deer druid with leafy staff on emerald background; furious orange cat berserker with blazing axe on dark orange background; floppy-eared hound necromancer in plum robes holding a small skull on violet background. Row 3: small menacing green forest dragon with curled horns on olive background; antlered purple shadow monster with glowing eyes on dusky plum background; massive grumpy armored turtle monster on dark teal background; luminous potion bottle and magical scroll on warm rose background; arcane comet spell spiraling around a golden die on dark blue background. This is a single uniform UI atlas; exact 5x3 alignment is essential. No 3D render, no photographic imagery, no existing game logos or named characters.
+`backend/data/verified-inventory.json` is the reviewed allowlist. Rust and the browser use it, and `sync:catalog` verifies incoming records before writing files. Unreviewed entries are excluded even if the API tags them as a supported set. Missing, duplicated, renamed, retyped, or quantity-changed approved entries stop the sync for review. Reprints and promo releases are excluded from game membership. API record suffixes such as `Modifier +4 (2)` become the printed name `Modifier +4`; the source slug remains unchanged. The Charismatic Song's class is corrected to Bard.
+
+## Actual card images
+
+All 163 reviewed card definitions have actual cached images in `public/cards/`. The cache manifest records the API source URL, exported image URL, content hash, byte count, and dimensions for each card. Images are rendered whole with `object-fit: contain`. The app prefers the local cache, falls back to the API URL if a local image fails, and shows a neutral unavailable state if both fail. Card inspection links to the original API image.
+
+Direct requests initially returned 403. The ordinary in-app browser subsequently completed the wiki's automatic verification and displayed its file pages normally. Their observed image assets were exported using the browser's supported asset bundling capability, then imported by `scripts/sync-card-art.mjs`. No CAPTCHA was solved, no security check was bypassed, and no browser cookies or credentials were extracted. All cached cards have at least 300px width; two large expansion monster images are the wiki's 694px preview derivatives of the exact API source file. Other files are the observed original images. No composition or card text was edited. Some Party Leaders use the official 2025 playmat artwork selected by the API, rather than the original base printing; these are alternate illustrations of the same published leader, not extra card definitions.
+
+The reusable script supports direct missing-file downloads, manually saved images (`--from`), and browser asset export manifests (`--manifest`). It never saves HTML/security-check responses as image files. `npm run test:art` checks coverage, source identity, image format, file name, byte length, and SHA-256 for every card. New blocked requests stop further downloads to that host. Existing valid files remain usable offline.
+
+Generated stand-in portraits and their source-art feature flag have been removed. Original game text/artwork remains owned by Unstable Games; the API's software license does not license the game content. Individual wiki references remain in the raw source snapshot.
 
 ## Sound
 
-The small optional interface chime is synthesized in Web Audio. No third-party recording is included yet.
+The optional interface chime is synthesized in Web Audio. No third-party recording is bundled.
 
-Planned CC0 sources (not yet downloaded or bundled):
+Planned CC0 sources, not yet downloaded or bundled:
 
 - https://kenney.nl/assets/casino-audio
 - https://kenney.nl/assets/rpg-audio

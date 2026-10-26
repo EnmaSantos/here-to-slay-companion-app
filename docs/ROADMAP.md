@@ -6,6 +6,7 @@
 - Practice bots: host adds/removes bot seats in the lobby, including one human + five bots or mixed friend/bot rooms. Automatically ready; server rolls, resolves ties, drafts available leaders, and takes paced draw/refresh/pass turns. Policies receive the same private snapshot as a human, without other hands or deck order.
 - Rust/Axum: server-owned rooms, guest seat tokens, validated commands, revision checks, idempotency, authenticated WebSockets, durable snapshots, turn deadlines.
 - Exact inventories: base 115/15/6; either expansion 146/17/8; both 177/19/10 (main deck/monsters/leaders).
+- Reviewed 163-definition retail allowlist shared by Rust/browser and catalog synchronization; set filters and labels in the library. All 163 actual card images are cached locally with API source references and checksums. The UI prefers those assets, with remote/unavailable fallbacks and no generated stand-in artwork.
 - Draft: roll two dice, rank descending, resolve nested ties within the original group, choose unique leaders. Last picker starts; turns follow original seating order. The Shadow Claw is unavailable in two-player games.
 - Actions: draw for 1 AP, discard hand/draw five for 3 AP, end turn. The server passes the turn at the deadline. No client-supplied dice or deck order.
 - Standard (default): 120-second turns, 10-second challenges, 10-second modifiers. Quick: 60/10/5. Reaction windows are configured and displayed but not yet executed in this milestone.
@@ -27,7 +28,7 @@
 
 - Event-driven card plays, targeting, dice, spell trails, impacts, and monster defeat; reduced motion and lower mobile particle quality.
 - CC0 audio from Kenney (Casino, RPG, Impact packs) and the chosen OpenGameArt fantasy music; separate music and effects controls. Current preview uses a small synthesized interface chime only.
-- Verified card artwork availability; preserve original attribution. The source wiki currently returns HTTP 403 to image requests. Fallback portraits must be identified as original placeholder art, never passed off as the official card face.
+- Maintain the reviewed local artwork cache as the source catalog changes. The cache is complete for all 163 included definitions. The reusable downloader/manual-import script preserves source references and checksums; no generated portraits or replacement characters are used.
 - Guest recovery/device transfer, room cleanup/retention, rate limiting before a public backend release, deployment health probes, and production privacy review.
 - Deploy Rust as a separate native service/container, configure the Sites frontend with its HTTPS origin, connect Supabase Postgres, then test real remote devices. Do not present a frontend without a reachable Rust service as working online multiplayer.
 

@@ -37,18 +37,25 @@ import {
 } from "lucide-react";
 import {
   CARD_BY_SLUG,
+  CARD_SETS,
   GAME_CARDS,
   SETS,
   inventory,
+  cardSetName,
   title,
 } from "@/lib/game-catalog";
 import { useRoom } from "@/lib/use-room";
+import cachedArt from "@/lib/card-art-manifest.json";
 import type { Card } from "@/lib/generated/Card";
 import type { RoomSettings } from "@/lib/generated/RoomSettings";
 import type { RoomView } from "@/lib/generated/RoomView";
 import type { GameCommand } from "@/lib/generated/GameCommand";
 
 type Command = (command: GameCommand) => Promise<void>;
+const LOCAL_CARD_ART = cachedArt.cards as Record<
+  string,
+  { src: string; sourceUrl: string }
+>;
 const DEFAULTS: RoomSettings = {
   playerCount: 2,
   expansions: [],
@@ -68,50 +75,38 @@ const CLASS_MARKS: Record<string, string> = {
   berserker: "✹",
   necromancer: "☽",
 };
-const ART_CLASSES = [
-  "fighter",
-  "guardian",
-  "ranger",
-  "wizard",
-  "thief",
-  "bard",
-  "warrior",
-  "druid",
-  "berserker",
-  "necromancer",
-];
-
 function CardArtwork({ card }: { card: Card }) {
-  const [failed, setFailed] = useState(false);
-  let index = ART_CLASSES.indexOf(card.classes[0]);
-  if (index < 0)
-    index =
-      card.type === "monster"
-        ? 10 + ([...card.slug].reduce((n, c) => n + c.charCodeAt(0), 0) % 3)
-        : ["modifier", "challenge"].includes(card.type)
-          ? 14
-          : 13;
-  // The wiki currently rejects image requests. Preserve its URLs and opt back in
-  // when source artwork becomes reachable; never show a broken image as a card.
-  const useSource = process.env.NEXT_PUBLIC_USE_SOURCE_ART === "1";
+  const [failedSources, setFailedSources] = useState<string[]>([]);
+  const [loadedUrl, setLoadedUrl] = useState<string | null>(null);
+  const saved = LOCAL_CARD_ART[card.slug];
+  const sources = [
+    saved?.sourceUrl === card.imageUrl ? saved.src : null,
+    card.imageUrl,
+  ].filter((url): url is string => !!url);
+  const url = sources.find((source) => !failedSources.includes(source));
+  const unavailable = !url;
+  const loaded = !!url && loadedUrl === url;
   return (
     <span className="card-artwork">
-      <span
-        className="atlas-portrait"
-        style={{
-          backgroundPosition: `${(index % 5) * 25}% ${Math.floor(index / 5) * 50}%`,
-        }}
-      />
-      <span className="art-credit">PREVIEW ART</span>
-      <span className="art-name">{card.name}</span>
-      <span className="art-type">{title(card.classes[0] ?? card.type)}</span>
-      {useSource && card.imageUrl && !failed ? (
+      {!loaded ? (
+        <span className="card-art-status" aria-hidden={!unavailable}>
+          <BookOpen size={24} aria-hidden="true" />
+          <strong>{card.name}</strong>
+          <small>{title(card.classes[0] ?? card.type)}</small>
+          <span>
+            {unavailable ? "Artwork unavailable" : "Loading card artwork…"}
+          </span>
+        </span>
+      ) : null}
+      {url && !unavailable ? (
         <img
           className="source-card-art"
-          src={card.imageUrl}
+          src={url}
           alt={card.name}
           loading="lazy"
-          onError={() => setFailed(true)}
+          decoding="async"
+          onLoad={() => setLoadedUrl(url)}
+          onError={() => setFailedSources((previous) => [...previous, url])}
         />
       ) : null}
     </span>
@@ -224,6 +219,7 @@ export function GameCard({
       <span className="card-caption">
         <strong>{card.name}</strong>
         <span>
+          {cardSetName(card)} ·{" "}
           {card.classes[0] ? title(card.classes[0]) : title(card.type)}
         </span>
       </span>
@@ -400,6 +396,7 @@ function CardDetail({ card, close }: { card: Card; close: () => void }) {
           {card.classes[0] ? ` · ${title(card.classes[0])}` : ""}
         </span>
         <h2>{card.name}</h2>
+        <p className="card-set-label">{cardSetName(card)}</p>
         {card.rollRequirement ? (
           <span className="roll-requirement">
             <Dice5 size={16} /> Roll {card.rollRequirement}
@@ -413,6 +410,16 @@ function CardDetail({ card, close }: { card: Card; close: () => void }) {
             {rule}
           </p>
         ))}
+        {card.imageUrl ? (
+          <a
+            className="source-image-link"
+            href={card.imageUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open original card image <ArrowRight size={13} />
+          </a>
+        ) : null}
       </div>
     </Dialog>
   );
@@ -421,15 +428,27 @@ function CardDetail({ card, close }: { card: Card; close: () => void }) {
 function Library({
   close,
   inspect,
+  tableSets,
 }: {
   close: () => void;
   inspect: (c: Card) => void;
+  tableSets?: string[];
 }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("all");
+  const [setSelection, setSetSelection] = useState(
+    tableSets ? "table" : "base-game",
+  );
+  const selectedSets =
+    setSelection === "table"
+      ? (tableSets ?? ["base-game"])
+      : setSelection === "all"
+        ? CARD_SETS.map((s) => s.id)
+        : [setSelection];
   const cards = GAME_CARDS.filter(
     (c) =>
       (filter === "all" || c.type === filter) &&
+      c.sets.some((s) => selectedSets.includes(s)) &&
       `${c.name} ${c.effect ?? ""} ${c.classes.join(" ")}`
         .toLowerCase()
         .includes(query.toLowerCase()),
@@ -439,8 +458,8 @@ function Library({
       <span className="eyebrow">Know your party</span>
       <h2>The card library</h2>
       <p className="muted">
-        Base game and both expansions. Every adventure starts with the right
-        company.
+        Published cards from the base game, Warriors & Druids, and Berserkers &
+        Necromancers. Choose a set to explore.
       </p>
       <div className="library-controls">
         <label>
@@ -452,6 +471,19 @@ function Library({
             aria-label="Search the card library"
           />
         </label>
+        <select
+          value={setSelection}
+          onChange={(e) => setSetSelection(e.target.value)}
+          aria-label="Filter by card set"
+        >
+          {tableSets ? <option value="table">This table’s sets</option> : null}
+          {CARD_SETS.map((s) => (
+            <option key={s.id} value={s.id}>
+              {s.name}
+            </option>
+          ))}
+          <option value="all">All supported sets</option>
+        </select>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
@@ -473,7 +505,9 @@ function Library({
           ))}
         </select>
       </div>
-      <div className="library-count">{cards.length} unique cards</div>
+      <div className="library-count">
+        {cards.length} unique cards · published retail inventory
+      </div>
       <div className="library-grid">
         {cards.map((c) => (
           <GameCard key={c.slug} card={c} onClick={() => inspect(c)} small />
@@ -574,7 +608,7 @@ function Home({
       setMode("join");
     }
   }, [inviteCode]);
-  const featured = ["bad-axe", "the-cloaked-sage", "big-buckley"].map((slug) =>
+  const featured = ["bad-axe", "the-cloaked-sage", "sharp-fox"].map((slug) =>
     CARD_BY_SLUG.get(slug)!,
   );
   return (
@@ -1656,7 +1690,13 @@ export function GameApp() {
           </button>
         </footer>
         {library ? (
-          <Library close={() => setLibrary(false)} inspect={setSelected} />
+          <Library
+            close={() => setLibrary(false)}
+            inspect={setSelected}
+            tableSets={
+              room ? ["base-game", ...room.settings.expansions] : undefined
+            }
+          />
         ) : null}
         {rules ? <HowToPlay close={() => setRules(false)} /> : null}
         {selected ? (

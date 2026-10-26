@@ -3219,7 +3219,7 @@ img {
     transform: none !important;
   }
 }
-/* Original fallback portraits keep the table usable when source artwork is unavailable. */
+/* Actual API card images, with a neutral status when the image host is unavailable. */
 .card-artwork {
   position: absolute;
   inset: 0;
@@ -3229,49 +3229,40 @@ img {
   border-radius: 5px;
   color: #3c3040;
 }
-.atlas-portrait {
+.card-art-status {
   position: absolute;
-  inset: 0 0 24%;
-  display: block;
-  background-image: url("/art/class-atlas.webp");
-  background-size: 500% 300%;
-  background-repeat: no-repeat;
-}
-.art-credit {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  background: #17121f88;
-  border: 1px solid #ffffff18;
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-size: 5px;
-  color: #fff9e5;
-  letter-spacing: 0.08em;
-  font-family: var(--sans);
-}
-.art-name {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  right: 5%;
+  inset: 0;
+  padding: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  background: linear-gradient(145deg, #e9e0d2, #d6c9b8);
 }
-.art-type {
-  position: absolute;
-  bottom: 4%;
-  left: 5%;
-  right: 5%;
-  text-align: center;
-  color: #8a735e;
-  font-size: 6px;
-  letter-spacing: 0.13em;
+.card-art-status > strong {
+  font: 600 15px/1.2 var(--serif);
+}
+.card-art-status > small {
+  font-size: 8px;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.card-art-status > span {
+  color: #746675;
+  font: 8px/1.4 var(--sans);
+}
+.source-image-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-size: 12px;
+}
+.card-detail .card-set-label {
+  color: var(--muted);
+  font-size: 12px;
 }
 .source-card-art {
   position: absolute;
@@ -3311,20 +3302,8 @@ img {
 .fan-card {
   aspect-ratio: 63/91;
 }
-.fan-card .art-name {
-  font-size: 14px;
-}
-.fan-card .art-type {
-  font-size: 6px;
-}
-.small-card .art-name {
-  font-size: 11px;
-}
-.small-card .art-credit {
-  font-size: 4px;
-  padding: 1px 3px;
-  top: 4px;
-  left: 4px;
+.small-card .card-art-status > strong {
+  font-size: 12px;
 }
 .detail-art {
   position: relative;
@@ -3335,15 +3314,8 @@ img {
   border-radius: 12px;
   overflow: hidden;
 }
-.detail-art .art-name {
-  font-size: 23px;
-}
-.detail-art .art-type {
-  font-size: 10px;
-}
-.detail-art .art-credit {
-  font-size: 7px;
-  padding: 3px 6px;
+.detail-art .card-art-status > strong {
+  font-size: 25px;
 }
 .mini-leader-art {
   width: 44px;
@@ -3354,36 +3326,26 @@ img {
   overflow: hidden;
   display: block;
 }
-.mini-leader-art .art-name,
-.mini-leader-art .art-type,
-.mini-leader-art .art-credit {
+.mini-leader-art .card-art-status > strong,
+.mini-leader-art .card-art-status > small,
+.mini-leader-art .card-art-status > span {
   display: none;
-}
-.mini-leader-art .atlas-portrait {
-  bottom: 0;
 }
 .brand small {
   letter-spacing: 0.13em;
-}
-@media (max-width: 800px) {
-  .fan-card .art-name {
-    font-size: 11px;
-  }
 }
 @media (max-width: 600px) {
   .mini-leader-art {
     width: 35px;
     height: 48px;
   }
-  .monster-row .art-name {
+  .monster-row .card-art-status > strong {
     font-size: 10px;
   }
-  .monster-row .art-credit {
-    font-size: 4px;
-    left: 3px;
-    top: 3px;
+  .monster-row .card-art-status {
+    gap: 6px;
   }
-  .hero-intro .fan-card .art-name {
+  .hero-intro .fan-card .card-art-status > strong {
     font-size: 11px;
   }
 }

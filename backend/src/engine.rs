@@ -270,28 +270,87 @@ pub fn new_token() -> String {
     format!("{}{}", Uuid::new_v4().simple(), Uuid::new_v4().simple())
 }
 
+#[derive(Deserialize)]
+struct VerifiedInventory {
+    sets: Vec<VerifiedSet>,
+}
+#[derive(Deserialize)]
+struct VerifiedSet {
+    id: String,
+    cards: Vec<VerifiedCard>,
+}
+#[derive(Deserialize)]
+struct VerifiedCard {
+    slug: String,
+    name: String,
+    #[serde(rename = "type")]
+    card_type: String,
+    quantity: usize,
+}
+
 pub fn catalog() -> Vec<Card> {
     #[derive(Deserialize)]
     struct Snapshot {
         cards: Vec<Card>,
     }
-    let mut snapshot: Snapshot = serde_json::from_str(include_str!("../data/catalog.json"))
+    let snapshot: Snapshot = serde_json::from_str(include_str!("../data/catalog.json"))
         .expect("valid bundled card catalog");
-    for card in &mut snapshot.cards {
-        if card.slug == "the-charismatic-song" {
-            card.classes = vec!["bard".into()];
+    select_verified_cards(&snapshot.cards).expect("catalog matches reviewed retail inventories")
+}
+
+fn select_verified_cards(source: &[Card]) -> Result<Vec<Card>, String> {
+    let inventory: VerifiedInventory =
+        serde_json::from_str(include_str!("../data/verified-inventory.json"))
+            .expect("valid reviewed inventories");
+    let mut cards = vec![];
+    let mut seen = HashSet::new();
+    for set in inventory.sets {
+        for approved in set.cards {
+            ensure(
+                seen.insert(approved.slug.clone()),
+                "Duplicate reviewed card.",
+            )?;
+            let matches: Vec<_> = source.iter().filter(|c| c.slug == approved.slug).collect();
+            ensure(
+                matches.len() == 1,
+                "A reviewed card is missing or duplicated.",
+            )?;
+            let mut card = matches[0].clone();
+            // The API uses numeric suffixes to disambiguate records with the
+            // same printed modifier name. They are not part of the card name.
+            let printed_name = card
+                .name
+                .rsplit_once(" (")
+                .filter(|(_, suffix)| {
+                    suffix
+                        .strip_suffix(')')
+                        .is_some_and(|n| !n.is_empty() && n.chars().all(|c| c.is_ascii_digit()))
+                })
+                .map_or(card.name.as_str(), |(name, _)| name);
+            ensure(
+                printed_name == approved.name && card.card_type == approved.card_type,
+                "A reviewed card changed identity.",
+            )?;
+            ensure(card.sets.contains(&set.id), "A reviewed card changed sets.")?;
+            let releases: Vec<_> = card.releases.iter().filter(|r| r.set == set.id).collect();
+            ensure(
+                !releases.is_empty() && releases.iter().all(|r| r.quantity == approved.quantity),
+                "A reviewed card changed quantity.",
+            )?;
+            card.releases = vec![Release {
+                set: set.id.clone(),
+                date: releases[0].date.clone(),
+                quantity: approved.quantity,
+            }];
+            card.sets = vec![set.id.clone()];
+            card.name = approved.name;
+            if card.slug == "the-charismatic-song" {
+                card.classes = vec!["bard".into()];
+            }
+            cards.push(card);
         }
     }
-    snapshot
-        .cards
-        .into_iter()
-        .filter(|c| {
-            c.sets
-                .iter()
-                .any(|s| [BASE, WARRIORS, BERSERKERS].contains(&s.as_str()))
-                && c.card_type != "rule-card"
-        })
-        .collect()
+    Ok(cards)
 }
 
 pub fn build_pool(settings: &RoomSettings, cards: &[Card], card_type: &str) -> Vec<CardInstance> {
@@ -965,6 +1024,25 @@ mod tests {
                 .count(),
             14
         );
+    }
+    #[test]
+    fn reviewed_roster_excludes_unknown_cards_and_rejects_changed_counts() {
+        let mut source = catalog();
+        assert_eq!(source.len(), 163);
+        let mut fake = source[0].clone();
+        fake.slug = "invented-hero".into();
+        fake.name = "Invented Hero".into();
+        source.push(fake);
+        let selected = select_verified_cards(&source).unwrap();
+        assert_eq!(selected.len(), 163);
+        assert!(!selected.iter().any(|c| c.slug == "invented-hero"));
+        assert!(
+            selected
+                .iter()
+                .all(|c| c.sets.len() == 1 && c.releases.len() == 1)
+        );
+        source[0].releases[0].quantity += 1;
+        assert!(select_verified_cards(&source).is_err());
     }
     #[test]
     fn tiebreakers_never_escape_the_original_group() {

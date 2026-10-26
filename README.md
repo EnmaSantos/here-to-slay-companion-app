@@ -56,7 +56,7 @@ The Rust server persists development rooms in ignored `backend/.slay-data/`. It 
 
 Refresh the pinned data with `npm run sync:catalog`, then run `npm run test:engine` to verify it. The compact browser catalog excludes unrelated expansions and source-only metadata.
 
-The catalog snapshot comes from [the existing read-only API](https://github.com/EnmaSantos/here-to-slay-api). Release quantities create physical copies; reprints are not added together. The Charismatic Song's class is normalized to Bard. Rules/reference cards are not shuffled into playable decks.
+The catalog snapshot comes from [the existing read-only API](https://github.com/EnmaSantos/here-to-slay-api). The server and browser both enforce the reviewed 163-definition roster in `backend/data/verified-inventory.json`, checked against the three published retail inventories. Unknown/fan/promo additions never enter the pool; missing cards or changed identities/quantities fail validation before a sync is saved. Release quantities create physical copies; reprints are not added together. The Charismatic Song's class is normalized to Bard, and API record suffixes such as “(2)” are removed from printed modifier names. Rules/reference cards are not shuffled into playable decks. The library starts with base cards, or the current room's enabled sets, and lets you select other supported sets explicitly.
 
 ## Architecture
 
@@ -100,7 +100,16 @@ See [verification notes and table screenshots](docs/VERIFICATION.md) for this mi
 
 ## Artwork and sound
 
-The wiki image URLs currently return HTTP 403. The preview uses clearly labeled original class/creature fallback portraits; official card text and source references remain in the catalog. Source artwork can be enabled with `NEXT_PUBLIC_USE_SOURCE_ART=1` when it is reachable. See [asset provenance and the generation prompt](docs/ASSETS.md).
+All 163 reviewed cards ship with locally cached real images in `public/cards/`. The app loads those first, preserving the complete card face without cropping. API URLs remain the source references and fallback. No generated character art is shipped or substituted. If both local and remote files fail, the card shows its real name/type and **Artwork unavailable**.
+
+```bash
+npm run sync:art                         # Download missing API images; reuse valid cached files
+npm run sync:art -- --from /path/to/cards # Import manual downloads named by slug or API filename
+npm run sync:art -- --manifest /path/to/export.json # Import a browser pageAssets export
+npm run test:art                         # Verify all 163 files, source URLs, and checksums
+```
+
+The direct wiki image requests returned 403 here, but the ordinary browser successfully rendered the wiki's file pages after its automatic verification. We exported their observed real images and imported them into the cache. The downloader stops on blocked hosts, rejects HTML/security pages, validates image formats, writes atomically, and records source URLs plus SHA-256 checksums in `lib/card-art-manifest.json`. No browser cookies or credentials are stored in the repo. See [the card audit and image-source notes](docs/ASSETS.md).
 
 The current optional interface chime is synthesized in Web Audio and muted by default. CC0 SFX and background music are planned, not bundled yet.
 

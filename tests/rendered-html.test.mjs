@@ -73,8 +73,10 @@ test(
         assert.ok(html.includes(text), `Missing ${text}`);
       assert.doesNotMatch(
         html,
-        /Your site is taking shape|Codex is working|codex-preview|tokenHash/,
+        /Your site is taking shape|Codex is working|codex-preview|tokenHash|class-atlas|PREVIEW ART/,
       );
+      assert.match(html, /\/cards\/bad-axe-[a-f0-9]+\.png/);
+      assert.doesNotMatch(html, /src="https:\/\/www\.unstablegameswiki\.com\/images\//);
     } finally {
       try {
         if (process.platform === "win32") child.kill();

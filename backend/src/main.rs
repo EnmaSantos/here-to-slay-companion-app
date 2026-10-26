@@ -120,7 +120,7 @@ async fn health(State(app): State<Arc<App>>) -> Json<Value> {
     )
 }
 async fn get_catalog(State(app): State<Arc<App>>) -> Json<Value> {
-    Json(json!({"data":app.cards,"version":"2026-07-13-inventory-v1"}))
+    Json(json!({"data":app.cards,"version":"2026-10-25-retail-inventory-v1"}))
 }
 
 async fn create_room(

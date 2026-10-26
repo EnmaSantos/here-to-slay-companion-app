@@ -1,4 +1,6 @@
 import clientCards from "@/lib/catalog-data.json";
+import verifiedInventory from "@/backend/data/verified-inventory.json";
+import { selectVerifiedCards } from "./verified-catalog.mjs";
 import type { Card } from "./generated/Card";
 
 export const SETS = [
@@ -20,13 +22,19 @@ export const SETS = [
   },
 ];
 
-const supported = new Set(["base-game", ...SETS.map((s) => s.id)]);
-export const GAME_CARDS = (clientCards as unknown as Card[])
-  .filter((c) => c.type !== "rule-card" && c.sets.some((s) => supported.has(s)))
-  .map((c) =>
-    c.slug === "the-charismatic-song" ? { ...c, classes: ["bard"] } : c,
-  );
+export const CARD_SETS = verifiedInventory.sets.map(
+  ({ id, name, sourceUrl }) => ({ id, name, sourceUrl }),
+);
+export const GAME_CARDS = selectVerifiedCards(
+  clientCards,
+  verifiedInventory,
+) as Card[];
 export const CARD_BY_SLUG = new Map(GAME_CARDS.map((c) => [c.slug, c]));
+export function cardSetName(card: Card) {
+  return (
+    CARD_SETS.find((s) => card.sets.includes(s.id))?.name ?? "Here to Slay"
+  );
+}
 export function title(value: string) {
   return value.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
