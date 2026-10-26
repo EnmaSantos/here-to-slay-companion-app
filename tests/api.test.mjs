@@ -146,3 +146,132 @@ test("concurrent room creation generates independent codes, hands, and owners", 
     expected: 401,
   });
 });
+
+test("host manages ready bot seats alongside friends, with capacity and authorization checks", async () => {
+  const host = await api("/rooms", {
+    body: { name: "Bot Host", settings: { ...settings, playerCount: 3 } },
+  });
+  const guest = await api(`/rooms/${host.room.code}/join`, {
+    body: { name: "Human Friend" },
+  });
+  let view = await api(`/rooms/${host.room.code}`, { token: host.token });
+  await api(`/rooms/${view.code}/commands`, {
+    token: guest.token,
+    body: {
+      requestId: randomUUID(),
+      expectedVersion: view.version,
+      command: { type: "add_bot" },
+    },
+    expected: 400,
+  });
+  const envelope = {
+    requestId: randomUUID(),
+    expectedVersion: view.version,
+    command: { type: "add_bot" },
+  };
+  view = await api(`/rooms/${view.code}/commands`, {
+    token: host.token,
+    body: envelope,
+  });
+  const bot = view.players.find((p) => p.isBot);
+  assert.ok(bot.ready);
+  assert.equal(view.players.length, 3);
+  const duplicate = await api(`/rooms/${view.code}/commands`, {
+    token: host.token,
+    body: envelope,
+  });
+  assert.equal(duplicate.players.length, 3);
+  await api(`/rooms/${view.code}/join`, {
+    body: { name: "Extra Guest" },
+    expected: 400,
+  });
+  await api(`/rooms/${view.code}/commands`, {
+    token: host.token,
+    body: {
+      requestId: randomUUID(),
+      expectedVersion: view.version,
+      command: { type: "remove_bot", playerId: guest.room.yourId },
+    },
+    expected: 400,
+  });
+  view = await send(host, {
+    type: "settings",
+    settings: { ...view.settings, preset: "quick" },
+  });
+  assert.ok(view.players.find((p) => p.isBot).ready);
+  view = await send(host, { type: "remove_bot", playerId: bot.id });
+  assert.equal(view.players.length, 2);
+  assert.ok(!view.players.some((p) => p.isBot));
+  await send(host, { type: "abort" });
+});
+
+test(
+  "solo practice: server bots roll, draft, keep their hand private, and finish turns automatically",
+  { timeout: 30000 },
+  async () => {
+    const host = await api("/rooms", {
+      body: { name: "Solo Practice", settings },
+    });
+    let view = await send(host, { type: "add_bot" });
+    const botId = view.players.find((p) => p.isBot).id;
+    await send(host, { type: "ready", ready: true });
+    view = await send(host, { type: "start_draft" });
+    const deadline = Date.now() + 20000;
+    while (view.phase !== "playing" && Date.now() < deadline) {
+      if (
+        view.phase === "initiative" &&
+        view.initiativeGroup.includes(host.room.yourId) &&
+        !view.rolledInRound.includes(host.room.yourId)
+      ) {
+        view = await send(host, { type: "roll_initiative" });
+      } else if (
+        view.phase === "draft" &&
+        view.choosingPlayerId === host.room.yourId
+      ) {
+        view = await send(host, {
+          type: "pick_leader",
+          slug: view.availableLeaders[0].slug,
+        });
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+        view = await api(`/rooms/${view.code}`, { token: host.token });
+      }
+    }
+    assert.equal(view.phase, "playing");
+    assert.ok(view.players.find((p) => p.id === botId).leader);
+    assert.equal(view.players.find((p) => p.id === botId).hand, null);
+    assert.notEqual(view.players[0].leader.slug, view.players[1].leader.slug);
+    await api(`/rooms/${view.code}/commands`, {
+      token: host.token,
+      body: {
+        requestId: randomUUID(),
+        expectedVersion: view.version,
+        command: { type: "remove_bot", playerId: botId },
+      },
+      expected: 400,
+    });
+    if (view.activePlayerId === host.room.yourId)
+      view = await send(host, { type: "end_turn" });
+    assert.equal(view.activePlayerId, botId);
+    const botTurn = view.turnNumber;
+    while (view.activePlayerId === botId && Date.now() < deadline) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      view = await api(`/rooms/${view.code}`, { token: host.token });
+    }
+    assert.equal(view.activePlayerId, host.room.yourId);
+    assert.equal(view.turnNumber, botTurn + 1);
+    assert.equal(view.actionPoints, 3);
+    assert.ok(
+      view.events.some(
+        (e) =>
+          /Practice Bot/.test(e.message) &&
+          ["draw", "refresh"].includes(e.kind),
+      ),
+    );
+    const finished = await send(host, { type: "abort" });
+    await new Promise((resolve) => setTimeout(resolve, 1600));
+    const stopped = await api(`/rooms/${view.code}`, { token: host.token });
+    assert.equal(stopped.phase, "finished");
+    assert.equal(stopped.version, finished.version);
+  },
+);

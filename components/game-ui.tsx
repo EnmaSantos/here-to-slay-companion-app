@@ -11,6 +11,7 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  Bot,
   Check,
   ChevronRight,
   Copy,
@@ -573,8 +574,8 @@ function Home({
       setMode("join");
     }
   }, [inviteCode]);
-  const featured = ["bad-axe", "the-cloaked-sage", "big-buckley"].map(
-    (slug) => CARD_BY_SLUG.get(slug)!,
+  const featured = ["bad-axe", "the-cloaked-sage", "big-buckley"].map((slug) =>
+    CARD_BY_SLUG.get(slug)!,
   );
   return (
     <main className="home-main">
@@ -660,7 +661,7 @@ function Home({
             </h2>
             <p>
               {mode === "create"
-                ? "Your table. Your pace. Your kind of chaos."
+                ? "Invite friends or add practice bots in the lobby."
                 : "Enter your invitation code and join the table."}
             </p>
           </div>
@@ -830,27 +831,54 @@ function PlayerSeat({
   self,
   ready,
   host,
+  bot,
+  remove,
+  busy,
 }: {
   name: string;
   number: number;
   self?: boolean;
   ready?: boolean;
   host?: boolean;
+  bot?: boolean;
+  remove?: () => void;
+  busy?: boolean;
 }) {
   return (
     <div
       className={`player-seat seat-color-${number % 6} ${ready ? "is-ready" : ""}`}
     >
       <div className="seat-avatar">
-        {name.slice(0, 1).toUpperCase()}
+        {bot ? (
+          <Bot size={20} className="bot-avatar" />
+        ) : (
+          name.slice(0, 1).toUpperCase()
+        )}
         {host ? <Crown size={11} /> : null}
       </div>
       <span>
         <strong>
           {name} {self ? <small>you</small> : null}
+          {bot ? <small className="bot-label">BOT</small> : null}
         </strong>
-        <small>{ready ? "Ready for adventure" : "Getting comfortable"}</small>
+        <small>
+          {bot
+            ? "Practice partner · automatically ready"
+            : ready
+              ? "Ready for adventure"
+              : "Getting comfortable"}
+        </small>
       </span>
+      {remove ? (
+        <button
+          className="remove-bot icon-button"
+          aria-label={`Remove ${name}`}
+          disabled={busy}
+          onClick={remove}
+        >
+          <X size={16} />
+        </button>
+      ) : null}
       <span className="ready-dot">
         {ready ? <Check size={15} /> : <span />}
       </span>
@@ -882,9 +910,9 @@ function Lobby({
           <em>coming together.</em>
         </h1>
         <p className="muted">
-          Send the invitation to your friends.
+          Invite friends or fill empty seats with practice bots.
           <br />
-          The best adventures start with a full table.
+          One human and a bot is all you need to get started.
         </p>
         <div className="seat-list">
           {room.players.map((p, i) => (
@@ -895,6 +923,13 @@ function Lobby({
               self={p.id === room.yourId}
               ready={p.ready}
               host={p.id === room.hostId}
+              bot={p.isBot}
+              busy={busy}
+              remove={
+                isHost && p.isBot
+                  ? () => void command({ type: "remove_bot", playerId: p.id })
+                  : undefined
+              }
             />
           ))}
           {Array.from(
@@ -906,12 +941,42 @@ function Lobby({
                 </span>
                 <div>
                   <strong>A seat for a future rival</strong>
-                  <small>Share the invitation to fill this spot</small>
+                  <small>
+                    Invite a friend
+                    {isHost
+                      ? " or add a bot below"
+                      : " or ask the host for a bot"}
+                  </small>
                 </div>
               </div>
             ),
           )}
         </div>
+        {isHost ? (
+          <div className="practice-controls">
+            <button
+              className="button secondary"
+              disabled={
+                busy || room.players.length >= room.settings.playerCount
+              }
+              onClick={() => void command({ type: "add_bot" })}
+            >
+              <Bot size={17} /> Add practice bot
+            </button>
+            <small>
+              {room.players.length >= room.settings.playerCount
+                ? "Table full. Remove a bot or increase the player count for another seat."
+                : "Bots fill the player count you chose. Mix them with friends or practice solo."}
+            </small>
+          </div>
+        ) : null}
+        {room.players.some((p) => p.isBot) ? (
+          <p className="bot-preview-note">
+            <Bot size={15} /> Practice bots currently roll, draft, draw, refresh
+            their hand, and pass. Card plays and combat are coming with the game
+            engine.
+          </p>
+        ) : null}
         <div className="lobby-actions">
           <button
             className={`button ${me.ready ? "secondary" : "primary"}`}
@@ -1066,6 +1131,7 @@ function Initiative({
             <strong>
               {p.name}
               {p.id === room.yourId ? <small>you</small> : null}
+              {p.isBot ? <small className="bot-label">BOT</small> : null}
             </strong>
             <div className="roll-history">
               {p.rolls.map((r, n) => (
@@ -1129,7 +1195,10 @@ function LeaderDraft({
               key={id}
             >
               <span>{player.leader ? <Check size={14} /> : i + 1}</span>
-              <strong>{player.name}</strong>
+              <strong>
+                {player.name}
+                {player.isBot ? <small className="bot-label">BOT</small> : null}
+              </strong>
               {player.leader ? (
                 <small>{player.leader.name}</small>
               ) : (
@@ -1243,7 +1312,10 @@ function Table({
               >
                 <span className="seat-avatar">{p.name.slice(0, 1)}</span>
                 <div>
-                  <strong>{p.name}</strong>
+                  <strong>
+                    {p.name}
+                    {p.isBot ? <small className="bot-label">BOT</small> : null}
+                  </strong>
                   <small>{p.leader?.name}</small>
                 </div>
                 <span className="hand-count">

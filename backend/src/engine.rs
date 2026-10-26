@@ -8,6 +8,7 @@ use uuid::Uuid;
 pub const BASE: &str = "base-game";
 pub const WARRIORS: &str = "warrior-and-druid";
 pub const BERSERKERS: &str = "berserkers-and-necromancers";
+const BOT_DELAY_MS: i64 = 1_200;
 
 #[derive(Debug, Clone, Serialize, Deserialize, TS)]
 #[serde(rename_all = "camelCase")]
@@ -130,6 +131,8 @@ impl DiceRoll {
 pub struct Player {
     pub id: String,
     pub name: String,
+    #[serde(default)]
+    pub is_bot: bool,
     pub token_hash: String,
     pub ready: bool,
     pub rolls: Vec<DiceRoll>,
@@ -144,6 +147,7 @@ pub struct Player {
 pub struct PlayerView {
     pub id: String,
     pub name: String,
+    pub is_bot: bool,
     pub ready: bool,
     pub rolls: Vec<DiceRoll>,
     pub leader: Option<Card>,
@@ -185,6 +189,8 @@ pub struct Room {
     pub action_points: u8,
     pub turn_number: u32,
     pub turn_deadline: Option<i64>,
+    #[serde(default)]
+    pub bot_action_due: Option<i64>,
     pub events: Vec<GameEvent>,
     pub receipts: Vec<String>,
 }
@@ -229,6 +235,8 @@ pub struct RoomView {
 pub enum GameCommand {
     Ready { ready: bool },
     Settings { settings: RoomSettings },
+    AddBot,
+    RemoveBot { player_id: String },
     StartDraft,
     RollInitiative,
     PickLeader { slug: String },
@@ -324,6 +332,7 @@ pub fn new_player(name: &str) -> Result<(Player, String), String> {
         Player {
             id: Uuid::new_v4().to_string(),
             name: name.into(),
+            is_bot: false,
             token_hash: token_hash(&token),
             ready: false,
             rolls: vec![],
@@ -363,6 +372,7 @@ impl Room {
             action_points: 3,
             turn_number: 1,
             turn_deadline: None,
+            bot_action_due: None,
             events: vec![],
             receipts: vec![],
         };
@@ -378,7 +388,7 @@ impl Room {
         let hash = token_hash(token);
         self.players
             .iter()
-            .find(|p| p.token_hash == hash)
+            .find(|p| !p.is_bot && p.token_hash == hash)
             .map(|p| p.id.clone())
             .ok_or_else(|| "This seat belongs to a different guest session.".into())
     }
@@ -415,6 +425,7 @@ impl Room {
                 .map(|p| PlayerView {
                     id: p.id.clone(),
                     name: p.name.clone(),
+                    is_bot: p.is_bot,
                     ready: p.ready,
                     rolls: p.rolls.clone(),
                     leader: p.leader.clone(),
@@ -485,13 +496,50 @@ impl Room {
                 )?;
                 self.settings = settings.clone();
                 for p in &mut self.players {
-                    p.ready = false;
+                    p.ready = p.is_bot;
                 }
                 self.log(
                     "The host updated the adventure. Ready up again.",
                     "settings",
                     now,
                 );
+            }
+            GameCommand::AddBot => {
+                self.require_phase("lobby")?;
+                ensure(id == self.host_id, "Only the host can add practice bots.")?;
+                ensure(
+                    self.players.len() < self.settings.player_count,
+                    "This table is full. Increase the player count to add a bot.",
+                )?;
+                let number = (1..)
+                    .find(|n| {
+                        let name = format!("Practice Bot {n}");
+                        !self
+                            .players
+                            .iter()
+                            .any(|p| p.name.eq_ignore_ascii_case(&name))
+                    })
+                    .unwrap();
+                let (mut bot, _) = new_player(&format!("Practice Bot {number}"))?;
+                bot.is_bot = true;
+                bot.token_hash.clear(); // Bots have no usable guest credential.
+                bot.ready = true;
+                self.log(&format!("{} joined the party.", bot.name), "bot", now);
+                self.players.push(bot);
+            }
+            GameCommand::RemoveBot { player_id } => {
+                self.require_phase("lobby")?;
+                ensure(
+                    id == self.host_id,
+                    "Only the host can remove practice bots.",
+                )?;
+                let index = self
+                    .players
+                    .iter()
+                    .position(|p| p.id == *player_id && p.is_bot)
+                    .ok_or("That seat is not a practice bot.")?;
+                let bot = self.players.remove(index);
+                self.log(&format!("{} left the table.", bot.name), "bot", now);
             }
             GameCommand::StartDraft => {
                 self.require_phase("lobby")?;
@@ -593,6 +641,7 @@ impl Room {
                 self.log("The host closed this adventure.", "finished", now);
             }
         }
+        self.schedule_bot(now);
         self.version += 1;
         self.receipts.push(envelope.request_id.clone());
         if self.receipts.len() > 1000 {
@@ -741,11 +790,63 @@ impl Room {
         if self.phase == "playing" && self.turn_deadline.is_some_and(|d| now >= d) {
             self.log("Time is up. Passing the turn.", "timeout", now);
             self.next_turn(now);
+            self.schedule_bot(now);
             self.version += 1;
             true
         } else {
             false
         }
+    }
+
+    fn bot_actor(&self) -> Option<&Player> {
+        match self.phase.as_str() {
+            "initiative" => self.players.iter().find(|p| {
+                p.is_bot
+                    && self.initiative_group.contains(&p.id)
+                    && !self.rolled_in_round.contains(&p.id)
+            }),
+            "draft" => self
+                .players
+                .iter()
+                .find(|p| p.is_bot && self.draft_order.get(self.draft_index) == Some(&p.id)),
+            "playing" => self.players.get(self.active_player).filter(|p| p.is_bot),
+            _ => None,
+        }
+    }
+
+    fn schedule_bot(&mut self, now: i64) {
+        self.bot_action_due = self.bot_actor().map(|_| now + BOT_DELAY_MS);
+    }
+
+    /// One paced, legal action at a time. The policy receives the same personal
+    /// snapshot as a human, never another hand or the unrevealed deck order.
+    pub fn tick_bot(&mut self, cards: &[Card], now: i64) -> bool {
+        let Some(actor) = self.bot_actor() else {
+            return false;
+        };
+        let id = actor.id.clone();
+        let Some(due) = self.bot_action_due else {
+            self.schedule_bot(now);
+            self.version += 1;
+            return true;
+        };
+        if now < due {
+            return false;
+        }
+        let Some(command) = bot_command(&self.view(&id, now)) else {
+            return false;
+        };
+        self.apply(
+            &id,
+            &CommandEnvelope {
+                request_id: Uuid::new_v4().to_string(),
+                expected_version: self.version,
+                command,
+            },
+            cards,
+            now,
+        )
+        .is_ok()
     }
     fn log(&mut self, message: &str, kind: &str, now: i64) {
         let sequence = self.events.last().map_or(1, |e| e.sequence + 1);
@@ -758,6 +859,36 @@ impl Room {
         if self.events.len() > 100 {
             self.events.remove(0);
         }
+    }
+}
+
+fn bot_command(view: &RoomView) -> Option<GameCommand> {
+    match view.phase.as_str() {
+        "initiative" => Some(GameCommand::RollInitiative),
+        "draft" if !view.available_leaders.is_empty() => {
+            let index = rand::rng().random_range(0..view.available_leaders.len());
+            Some(GameCommand::PickLeader {
+                slug: view.available_leaders[index].slug.clone(),
+            })
+        }
+        "playing" => {
+            let hand = view
+                .players
+                .iter()
+                .find(|p| p.id == view.your_id)?
+                .hand
+                .as_ref()?;
+            if view.action_points == 3
+                && (hand.len() >= 8 || !hand.iter().any(|c| c.card.card_type == "hero"))
+            {
+                Some(GameCommand::RefreshHand)
+            } else if view.main_deck_count > 0 || !view.discard.is_empty() {
+                Some(GameCommand::Draw)
+            } else {
+                Some(GameCommand::EndTurn)
+            }
+        }
+        _ => None,
     }
 }
 
@@ -964,5 +1095,194 @@ mod tests {
                 .classes,
             ["bard"]
         );
+    }
+
+    #[test]
+    fn only_host_can_manage_bot_seats_and_settings_keep_them_ready() {
+        let mut room = game(3);
+        room.phase = "lobby".into();
+        room.players.pop();
+        let host = room.host_id.clone();
+        let guest = room.players[1].id.clone();
+        assert!(command(&mut room, &guest, GameCommand::AddBot, 0).is_err());
+        command(&mut room, &host, GameCommand::AddBot, 0).unwrap();
+        let bot = room.players[2].clone();
+        assert!(bot.is_bot && bot.ready && bot.token_hash.is_empty());
+        assert!(command(&mut room, &host, GameCommand::AddBot, 0).is_err());
+        assert!(room.player_id("").is_err());
+        assert!(room.view(&host, 0).players[2].is_bot);
+        let settings = RoomSettings {
+            preset: "quick".into(),
+            ..room.settings.clone()
+        };
+        command(&mut room, &host, GameCommand::Settings { settings }, 0).unwrap();
+        assert!(!room.players[0].ready && room.players[2].ready);
+        assert!(
+            command(
+                &mut room,
+                &guest,
+                GameCommand::RemoveBot {
+                    player_id: bot.id.clone()
+                },
+                0
+            )
+            .is_err()
+        );
+        assert!(
+            command(
+                &mut room,
+                &host,
+                GameCommand::RemoveBot { player_id: guest },
+                0
+            )
+            .is_err()
+        );
+        command(
+            &mut room,
+            &host,
+            GameCommand::RemoveBot { player_id: bot.id },
+            0,
+        )
+        .unwrap();
+        assert_eq!(room.players.len(), 2);
+    }
+
+    #[test]
+    fn solo_host_and_five_bots_finish_setup_and_pass_turns_without_clients() {
+        let (host, _) = new_player("Practice Bot 1").unwrap();
+        let host_id = host.id.clone();
+        let mut room = Room::new(
+            "BOTROOM1".into(),
+            host,
+            RoomSettings {
+                player_count: 6,
+                ..Default::default()
+            },
+            0,
+        )
+        .unwrap();
+        let cards = catalog();
+        for _ in 0..5 {
+            command(&mut room, &host_id, GameCommand::AddBot, 0).unwrap();
+        }
+        assert_eq!(room.players[1].name, "Practice Bot 2");
+        command(&mut room, &host_id, GameCommand::Ready { ready: true }, 0).unwrap();
+        command(&mut room, &host_id, GameCommand::StartDraft, 0).unwrap();
+        let mut time = 0;
+        for _ in 0..1000 {
+            if room.phase == "playing" {
+                break;
+            }
+            time += BOT_DELAY_MS;
+            if room.phase == "initiative"
+                && room.initiative_group.contains(&host_id)
+                && !room.rolled_in_round.contains(&host_id)
+            {
+                command(&mut room, &host_id, GameCommand::RollInitiative, time).unwrap();
+            } else if room.phase == "draft" && room.draft_order[room.draft_index] == host_id {
+                let slug = room.leaders[0].slug.clone();
+                command(&mut room, &host_id, GameCommand::PickLeader { slug }, time).unwrap();
+            } else {
+                assert!(room.tick_bot(&cards, time));
+            }
+        }
+        assert_eq!(room.phase, "playing");
+        assert_eq!(room.deck.len(), 85);
+        assert_eq!(
+            room.players
+                .iter()
+                .filter_map(|p| p.leader.as_ref().map(|l| &l.slug))
+                .collect::<HashSet<_>>()
+                .len(),
+            6
+        );
+        assert!(command(&mut room, &host_id, GameCommand::AddBot, time).is_err());
+        for p in room
+            .view(&host_id, time)
+            .players
+            .iter()
+            .filter(|p| p.is_bot)
+        {
+            assert!(p.hand.is_none());
+        }
+        if room.players[room.active_player].id == host_id {
+            command(&mut room, &host_id, GameCommand::EndTurn, time).unwrap();
+        }
+        let version = room.version;
+        assert!(!room.tick_bot(&cards, time));
+        assert_eq!(room.version, version);
+        let mut actions = 0;
+        while room.players[room.active_player].is_bot && actions < 16 {
+            time = room.bot_action_due.unwrap();
+            assert!(room.tick_bot(&cards, time));
+            actions += 1;
+        }
+        assert!(actions > 0);
+        assert_eq!(room.players[room.active_player].id, host_id);
+        assert!(room.bot_action_due.is_none());
+        assert!(!room.tick_bot(&cards, time + BOT_DELAY_MS));
+        // Removing a bot flag from a legacy snapshot must still restore human seats.
+        let mut snapshot = serde_json::to_value(&room).unwrap();
+        snapshot["players"][0]
+            .as_object_mut()
+            .unwrap()
+            .remove("isBot");
+        snapshot.as_object_mut().unwrap().remove("botActionDue");
+        let restored: Room = serde_json::from_value(snapshot).unwrap();
+        assert!(!restored.players[0].is_bot);
+        assert_eq!(restored.players[1].is_bot, room.players[1].is_bot);
+    }
+
+    #[test]
+    fn bot_policy_uses_only_own_hand_and_ends_when_no_draws_are_possible() {
+        let mut room = game(2);
+        room.phase = "playing".into();
+        room.players[1].is_bot = true;
+        room.active_player = 1;
+        room.action_points = 2;
+        let bot_id = room.players[1].id.clone();
+        let view = room.view(&bot_id, 0);
+        assert!(view.players[0].hand.is_none());
+        assert!(matches!(bot_command(&view), Some(GameCommand::EndTurn)));
+        room.action_points = 3;
+        assert!(matches!(
+            bot_command(&room.view(&bot_id, 0)),
+            Some(GameCommand::RefreshHand)
+        ));
+        // Pending automation survives a snapshot and still obeys its delay.
+        room.schedule_bot(0);
+        let mut restored: Room =
+            serde_json::from_str(&serde_json::to_string(&room).unwrap()).unwrap();
+        assert!(!restored.tick_bot(&catalog(), BOT_DELAY_MS - 1));
+        assert!(restored.tick_bot(&catalog(), BOT_DELAY_MS));
+        assert_eq!(restored.active_player, 0);
+        let host = restored.host_id.clone();
+        command(&mut restored, &host, GameCommand::Abort, BOT_DELAY_MS).unwrap();
+        assert!(!restored.tick_bot(&catalog(), BOT_DELAY_MS * 10));
+    }
+
+    #[test]
+    fn bots_reroll_only_inside_their_tied_group() {
+        let mut room = game(4);
+        room.players[1].is_bot = true;
+        room.players[2].is_bot = true;
+        let ids: Vec<_> = room.players.iter().map(|p| p.id.clone()).collect();
+        for (id, total) in ids.iter().zip([12, 5, 5, 3]) {
+            room.record_roll(id, roll(total), 0).unwrap();
+        }
+        room.schedule_bot(0);
+        assert_eq!(room.initiative_group, ids[1..3]);
+        assert!(room.tick_bot(&catalog(), BOT_DELAY_MS));
+        assert!(room.tick_bot(&catalog(), BOT_DELAY_MS * 2));
+        assert_eq!(room.players[0].rolls.len(), 1);
+        assert_eq!(room.players[3].rolls.len(), 1);
+        assert_eq!(room.players[1].rolls.len(), 2);
+        assert_eq!(room.players[2].rolls.len(), 2);
+        if room.phase == "draft" {
+            assert_eq!(room.draft_order.first(), Some(&ids[0]));
+            assert_eq!(room.draft_order.last(), Some(&ids[3]));
+        } else {
+            assert_eq!(room.initiative_group, ids[1..3]);
+        }
     }
 }

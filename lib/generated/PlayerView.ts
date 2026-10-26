@@ -3,4 +3,4 @@ import type { Card } from "./Card";
 import type { CardInstance } from "./CardInstance";
 import type { DiceRoll } from "./DiceRoll";
 
-export type PlayerView = { id: string, name: string, ready: boolean, rolls: Array<DiceRoll>, leader: Card | null, hand: Array<CardInstance> | null, handCount: number, party: Array<CardInstance>, };
+export type PlayerView = { id: string, name: string, isBot: boolean, ready: boolean, rolls: Array<DiceRoll>, leader: Card | null, hand: Array<CardInstance> | null, handCount: number, party: Array<CardInstance>, };

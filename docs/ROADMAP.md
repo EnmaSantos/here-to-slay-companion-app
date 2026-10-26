@@ -3,6 +3,7 @@
 ## Milestone 1 — room to table (implemented)
 
 - React interface: room creation/joining, card library, expandable rules, private table, card inspection, dice, leader draft, private hands.
+- Practice bots: host adds/removes bot seats in the lobby, including one human + five bots or mixed friend/bot rooms. Automatically ready; server rolls, resolves ties, drafts available leaders, and takes paced draw/refresh/pass turns. Policies receive the same private snapshot as a human, without other hands or deck order.
 - Rust/Axum: server-owned rooms, guest seat tokens, validated commands, revision checks, idempotency, authenticated WebSockets, durable snapshots, turn deadlines.
 - Exact inventories: base 115/15/6; either expansion 146/17/8; both 177/19/10 (main deck/monsters/leaders).
 - Draft: roll two dice, rank descending, resolve nested ties within the original group, choose unique leaders. Last picker starts; turns follow original seating order. The Shadow Claw is unavailable in two-player games.
@@ -17,6 +18,7 @@
 - Modifier opportunities: begin after dice and relevant targets are visible; Quick 5 seconds, Standard 10. Each valid modifier resets the response window/pass state. Pause and resume the turn budget across reaction phases.
 - Durable pending decisions, disconnect pauses, no automatic forfeits, and restoring remaining time without granting extra time on process restart.
 - Reviewed deterministic handlers for every included card; no natural-language interpretation during play. Optional Hero activation on entering play, activation limits, triggered effects, class Masks, protections, and item movement.
+- Extend the practice bot policy to legal card plays, target selection, challenges, modifiers, abilities, and monster attacks as each engine action becomes available. Difficulty controls and strategic policies can build on this interface.
 - Marked Warriors/Berserkers can carry two items, with at most one Mask. Druid low-roll success. Necromancer up-front costs. Gnawing Dread once per own turn, 2 AP; Raging Manticore draws two after its owner slays.
 - Monster requirements, distinct requirement slots, attack/failure/success, permanent slain-monster abilities, replenishment, and victory after resolution. Class victory only at end of own turn; leaders represent a class but are not Heroes.
 - Host target minimums 6 classes/3 monsters; reachable upper bounds; settings locked after the lobby. Document the printed expansion class target of seven alongside custom targets.
@@ -31,4 +33,4 @@
 
 ## Product boundaries
 
-Private friend rooms, 2–6 players, computers/tablets/phones. Base + Warriors & Druids + Berserkers & Necromancers only. No public matchmaking, bots, or full 3D arena in v1. Existing read-only card API stays compatible. Room names, private hands and deck order never appear in public catalog responses.
+Private friend/practice rooms, 2–6 total human or bot players, computers/tablets/phones. Base + Warriors & Druids + Berserkers & Necromancers only. No public matchmaking or full 3D arena in v1. Existing read-only card API stays compatible. Room names, private hands and deck order never appear in public catalog responses.

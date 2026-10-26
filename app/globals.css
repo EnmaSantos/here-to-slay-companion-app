@@ -1354,6 +1354,52 @@ img {
   margin-left: 4px;
   border-radius: 3px;
 }
+
+.bot-label {
+  display: inline-flex;
+  margin-left: 6px;
+  padding: 2px 5px;
+  border: 1px solid #b3a0df44;
+  border-radius: 4px;
+  color: var(--lilac, #c2a9ed);
+  font: 9px/1.1 var(--font-sans, sans-serif);
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+.seat-avatar > .bot-avatar {
+  position: static;
+  background: none;
+  padding: 0;
+}
+.remove-bot {
+  flex: 0 0 auto;
+}
+.practice-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.practice-controls small {
+  flex: 1 1 180px;
+  color: var(--muted, #a8a4b2);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.bot-preview-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--muted, #a8a4b2);
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 16px 0;
+}
+.bot-preview-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 .player-seat small {
   font-size: 9px;
   color: var(--dim);

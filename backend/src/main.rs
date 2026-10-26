@@ -116,7 +116,7 @@ struct JoinRoom {
 
 async fn health(State(app): State<Arc<App>>) -> Json<Value> {
     Json(
-        json!({"status":"ok","engine":"rust","version":env!("CARGO_PKG_VERSION"),"persistence":if app.database.is_some(){"postgres"}else{"local-file"},"milestone":"rooms-draft-deal","capabilities":["rooms","settings","initiative","nested-tiebreaks","leader-draft","exact-inventory","private-hands","draw","refresh-hand","turn-timers","reconnect"]}),
+        json!({"status":"ok","engine":"rust","version":env!("CARGO_PKG_VERSION"),"persistence":if app.database.is_some(){"postgres"}else{"local-file"},"milestone":"rooms-draft-deal","capabilities":["rooms","settings","practice-bots","initiative","nested-tiebreaks","leader-draft","exact-inventory","private-hands","draw","refresh-hand","turn-timers","reconnect"]}),
     )
 }
 async fn get_catalog(State(app): State<Arc<App>>) -> Json<Value> {
@@ -370,7 +370,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             for hub in hubs {
                 let mut guard = hub.room.lock().await;
                 let mut candidate = guard.clone();
-                if candidate.tick(now()) && clock.persist(&candidate).await.is_ok() {
+                let time = now();
+                let timed_out = candidate.tick(time);
+                let bot_acted = candidate.tick_bot(&clock.cards, time);
+                if (timed_out || bot_acted) && clock.persist(&candidate).await.is_ok() {
                     *guard = candidate;
                     hub.changes.send_replace(guard.clone());
                 }

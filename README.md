@@ -19,6 +19,8 @@ Open **http://127.0.0.1:3000**. The frontend proxies `/api` and WebSockets to Ru
 
 Create a table, send its invitation link to another browser/device, and join with a different name. Guest seats are stored per tab, so two tabs can represent different test players. Refreshing a tab restores its seat. The localhost URL is for local testing; friends on other computers require a reachable deployment or LAN setup with matching allowed origins.
 
+For solo practice, create a two-player table and select **Add practice bot** in the lobby. Ready up and roll for leaders. You can add up to five bots or mix them with friends, within your selected 2–6 total seats. The host can remove bots in the lobby; seats lock when drafting starts. Bots ready automatically, roll through ties, choose available leaders, and take paced turns on the server. Their current practice policy draws, refreshes a hand with no Heroes or at least eight cards, and passes; card plays and combat will follow the card engine. Bots use their own private snapshot and cannot see other hands or deck order.
+
 For separate terminals:
 
 ```bash
@@ -34,6 +36,7 @@ The Rust server persists development rooms in ignored `backend/.slay-data/`. It 
 ## Current behavior
 
 - 2–6 seats; everyone readies before the host starts the draft.
+- Host-managed practice bots fill existing seats, stay ready after setting changes, and work without a browser client. One human plus up to five bots is supported.
 - Every player rolls two dice. Sort descending. Tied groups reroll internally, including repeated ties, without overtaking other groups.
 - Draft leaders in that order. Leaders are unique; The Shadow Claw is excluded for two players.
 - Last picker takes the first gameplay turn; later turns follow the original seating order.
