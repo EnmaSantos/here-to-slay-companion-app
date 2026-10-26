@@ -1,0 +1,5 @@
+target
+.slay-data
+.env
+.env.*
+bindings
