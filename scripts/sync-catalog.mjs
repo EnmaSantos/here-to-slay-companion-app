@@ -45,12 +45,21 @@ const fields = [
   "effect",
   "imageUrl",
   "rollRequirement",
+  "requirements",
+  "heroRequirement",
+  "slayRollRequirement",
+  "failureRollRequirement",
+  "failurePenalty",
+  "passiveAbility",
   "rules",
   "releases",
 ];
 const client = supported.map((card) =>
   Object.fromEntries(
-    fields.map((key) => [key, card[key] ?? (key === "rules" ? [] : null)]),
+    fields.map((key) => [
+      key,
+      card[key] ?? (["rules", "requirements"].includes(key) ? [] : null),
+    ]),
   ),
 );
 await writeFile(

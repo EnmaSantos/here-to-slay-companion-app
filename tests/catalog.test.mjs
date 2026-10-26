@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { selectVerifiedCards } from "../lib/verified-catalog.mjs";
+import { describeRoll, neutralRollRange } from "../lib/monster-rolls.mjs";
 
 const read = async (path) =>
   JSON.parse(await readFile(new URL(path, import.meta.url), "utf8"));
@@ -96,4 +97,67 @@ test("missing, duplicated, renamed, or quantity-changed reviewed cards stop a ca
       /Review changed/,
     );
   }
+});
+
+test("all 19 monster details reach the client, including class slots and the reversed Dracos rolls", () => {
+  const cards = selectVerifiedCards(client, inventory).filter(
+    (c) => c.type === "monster",
+  );
+  assert.equal(cards.length, 19);
+  for (const card of cards) {
+    assert.ok(card.requirements.length);
+    for (const field of [
+      "heroRequirement",
+      "slayRollRequirement",
+      "failureRollRequirement",
+      "failurePenalty",
+      "passiveAbility",
+    ])
+      assert.ok(card[field], `${card.slug} missing ${field}`);
+    const original = selectVerifiedCards(source, inventory).find(
+      (c) => c.slug === card.slug,
+    );
+    for (const field of [
+      "requirements",
+      "heroRequirement",
+      "slayRollRequirement",
+      "failureRollRequirement",
+      "failurePenalty",
+      "passiveAbility",
+    ])
+      assert.deepEqual(card[field], original[field]);
+  }
+  const orthus = cards.find((c) => c.slug === "orthus"),
+    dracos = cards.find((c) => c.slug === "dracos");
+  assert.deepEqual(orthus.requirements, ["wizard", "any-hero"]);
+  assert.equal(describeRoll(orthus.slayRollRequirement), "8 or higher");
+  assert.equal(
+    neutralRollRange(orthus.slayRollRequirement, orthus.failureRollRequirement),
+    "5–7",
+  );
+  assert.equal(describeRoll(dracos.slayRollRequirement), "5 or lower");
+  assert.equal(describeRoll(dracos.failureRollRequirement), "8 or higher");
+  assert.equal(dracos.failurePenalty, "SACRIFICE a Hero card");
+  assert.equal(
+    neutralRollRange(dracos.slayRollRequirement, dracos.failureRollRequirement),
+    "6–7",
+  );
+  assert.throws(
+    () =>
+      selectVerifiedCards(
+        source.map((card) =>
+          card.slug === "orthus" ? { ...card, requirements: [] } : card,
+        ),
+        inventory,
+      ),
+    /missing monster attack details/,
+  );
+});
+
+test("adjacent attack ranges have no neutral result; plus/minus mean inclusive thresholds", () => {
+  assert.equal(describeRoll("11+"), "11 or higher");
+  assert.equal(describeRoll("7-"), "7 or lower");
+  assert.equal(neutralRollRange("7+", "6-"), null);
+  assert.equal(neutralRollRange("10+", "7-"), "8–9");
+  assert.equal(neutralRollRange(null, "7-"), null);
 });

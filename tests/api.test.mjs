@@ -23,6 +23,24 @@ const settings = {
   classTarget: 6,
   monsterTarget: 3,
 };
+test("catalog responses retain all monster attack details and the Dracos exception", async () => {
+  const { data: cards } = await api("/catalog");
+  const monsters = cards.filter((c) => c.type === "monster");
+  assert.equal(monsters.length, 19);
+  for (const monster of monsters) {
+    assert.ok(monster.requirements.length);
+    assert.ok(
+      monster.slayRollRequirement &&
+        monster.failureRollRequirement &&
+        monster.failurePenalty &&
+        monster.passiveAbility,
+    );
+  }
+  const dracos = monsters.find((c) => c.slug === "dracos");
+  assert.equal(dracos.slayRollRequirement, "5-");
+  assert.equal(dracos.failureRollRequirement, "8+");
+  assert.equal(dracos.failurePenalty, "SACRIFICE a Hero card");
+});
 async function send(seat, command) {
   const current = await api(`/rooms/${seat.room.code}`, { token: seat.token });
   return api(`/rooms/${current.code}/commands`, {

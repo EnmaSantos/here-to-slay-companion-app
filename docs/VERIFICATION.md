@@ -4,13 +4,13 @@ Checked locally on October 25, 2026. This verifies the room-to-table foundation,
 
 ## Automated checks
 
-- Rust engine: 21 passing tests, including generated-contract exports. Scenarios cover exact inventories, nested/repeated and independent tie groups, leader selection, last-picker-first, private hands, authorization, stale revisions, command idempotency, setting limits, host-managed bots, bots rerolling within their tied group, one human plus five bots completing setup and returning the turn to the human, and exclusion of unreviewed cards or changed quantities.
+- Rust engine: 22 passing tests, including generated-contract exports. Scenarios cover exact inventories, nested/repeated and independent tie groups, leader selection, last-picker-first, private hands, authorization, stale revisions, command idempotency, setting limits, host-managed bots, bots rerolling within their tied group, one human plus five bots completing setup and returning the turn to the human, and exclusion of unreviewed cards or changed quantities.
 - Rust formatting and Clippy with warnings denied: pass.
 - TypeScript typecheck: pass.
-- Six catalog/image tests verify the reviewed 163-definition roster, exact copy counts, exclusion of injected/fan/promo entries, failed syncs for changed records, real image signatures, and rejection of security-check HTML.
+- Eight catalog/image tests verify the reviewed 163-definition roster, exact copy counts, exclusion of injected/fan/promo entries, failed syncs for changed records, real image signatures, and rejection of security-check HTML.
 - Complete local art audit: all 163 files pass source-identity, byte-count, format, resolution, and SHA-256 checks; no generated portraits remain. All 163 were also requested through the frontend over HTTP and returned matching image bytes.
 - Production frontend build and an HTTP render through the actual local Worker runtime: pass. The page renders the room form without the old starter skeleton or private state.
-- Live API: five passing tests covering two-player and six-player flows, concurrent independent room creation, mixed human/bot lobby management, and solo practice from setup through an automatic bot turn. Both expansions are enabled in the human room flows; dealing leaves exactly `177 - (5 × players)` main cards and 16 unrevealed monsters.
+- Live API: six passing tests covering two-player and six-player flows, concurrent independent room creation, mixed human/bot lobby management, and solo practice from setup through an automatic bot turn, and complete monster attack metadata in catalog responses. Both expansions are enabled in the human room flows; dealing leaves exactly `177 - (5 × players)` main cards and 16 unrevealed monsters.
 
 ## Browser checks
 
@@ -31,6 +31,12 @@ The library filters show 95 base-game definitions, 35 Warriors & Druids definiti
 ![Dealt table](preview-table.png)
 
 ![Phone table](preview-mobile.png)
+
+Monster inspection was checked with Orthus (Wizard plus a separate Hero; 8+ slays, 4− discards two cards, 5–7 has no effect) and Dracos (5− slays, 8+ sacrifices a Hero, 6–7 has no effect). Required-party slots distinguish matching Leaders/Heroes from Any Hero slots. All 19 monsters retain these fields through Rust and the client catalog. At 390px, the complete Orthus roll table is visible without horizontal overflow. Old saved card records may omit the new fields; inspection resolves their reviewed catalog entry.
+
+![Monster attack details](preview-monster-rules.png)
+
+![Dracos reversed roll rules](preview-dracos-rules.png)
 
 ## Remaining limits
 

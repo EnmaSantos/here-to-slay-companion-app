@@ -2,7 +2,7 @@
 
 ## Milestone 1 — room to table (implemented)
 
-- React interface: room creation/joining, card library, expandable rules, private table, card inspection, dice, leader draft, private hands.
+- React interface: room creation/joining, card library, expandable rules, private table, card inspection, dice, leader draft, private hands. Monster details include required party slots, slay/failure/neutral roll ranges, penalties, and rewards; Dracos uses its printed reversed ranges. These are reference displays; attack execution remains in Milestone 2.
 - Practice bots: host adds/removes bot seats in the lobby, including one human + five bots or mixed friend/bot rooms. Automatically ready; server rolls, resolves ties, drafts available leaders, and takes paced draw/refresh/pass turns. Policies receive the same private snapshot as a human, without other hands or deck order.
 - Rust/Axum: server-owned rooms, guest seat tokens, validated commands, revision checks, idempotency, authenticated WebSockets, durable snapshots, turn deadlines.
 - Exact inventories: base 115/15/6; either expansion 146/17/8; both 177/19/10 (main deck/monsters/leaders).

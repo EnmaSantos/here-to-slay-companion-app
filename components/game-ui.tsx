@@ -46,6 +46,7 @@ import {
 } from "@/lib/game-catalog";
 import { useRoom } from "@/lib/use-room";
 import cachedArt from "@/lib/card-art-manifest.json";
+import { describeRoll, neutralRollRange } from "@/lib/monster-rolls.mjs";
 import type { Card } from "@/lib/generated/Card";
 import type { RoomSettings } from "@/lib/generated/RoomSettings";
 import type { RoomView } from "@/lib/generated/RoomView";
@@ -222,6 +223,7 @@ export function GameCard({
           {cardSetName(card)} ·{" "}
           {card.classes[0] ? title(card.classes[0]) : title(card.type)}
         </span>
+        {card.type === "monster" ? <MonsterSummary card={card} /> : null}
       </span>
     </button>
   );
@@ -384,42 +386,143 @@ function Settings({
   );
 }
 
-function CardDetail({ card, close }: { card: Card; close: () => void }) {
+function MonsterSummary({ card: snapshot }: { card: Card }) {
+  const card = CARD_BY_SLUG.get(snapshot.slug) ?? snapshot;
   return (
-    <Dialog label={card.name} onClose={close}>
-      <div className="card-detail">
+    <span className="monster-summary">
+      <span>Party: {card.heroRequirement ?? "See printed card"}</span>
+      {card.slayRollRequirement ? (
+        <span>
+          <Dice5 size={12} /> Slay: {describeRoll(card.slayRollRequirement)}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
+function MonsterDetails({ card }: { card: Card }) {
+  const neutral = neutralRollRange(
+    card.slayRollRequirement,
+    card.failureRollRequirement,
+  );
+  const hasClassSlot = card.requirements.some((r) => r !== "any-hero");
+  return (
+    <div className="monster-details">
+      <section>
+        <h3>Party required to attack</h3>
+        <p>{card.heroRequirement ?? "Check the printed party requirement."}</p>
+        <ul
+          className="party-requirement-slots"
+          aria-label="Required party cards"
+        >
+          {card.requirements.map((requirement, index) => (
+            <li key={index}>
+              {requirement === "any-hero" ? (
+                <Users size={16} />
+              ) : (
+                <ClassMark value={requirement} />
+              )}
+              <span>
+                {requirement === "any-hero" ? "Any Hero" : title(requirement)}
+                <small>
+                  {requirement === "any-hero" ? "any class" : "Leader or Hero"}
+                </small>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="monster-note">
+          {hasClassSlot
+            ? "Use a different card for each slot. Your Party Leader can fill its matching class slot; an Any Hero slot needs a Hero card."
+            : "Only Hero cards count toward this requirement. Your Party Leader does not count as a Hero."}
+        </p>
+      </section>
+      <section>
+        <h3>Attack roll · 2 dice</h3>
+        <p className="monster-note">Use your final total after modifiers.</p>
+        <dl className="monster-outcomes">
+          <div className="outcome-slay">
+            <dt>
+              <Trophy size={14} /> {describeRoll(card.slayRollRequirement)}
+            </dt>
+            <dd>SLAY this Monster card.</dd>
+          </div>
+          <div className="outcome-penalty">
+            <dt>
+              <Shield size={14} /> {describeRoll(card.failureRollRequirement)}
+            </dt>
+            <dd>{card.failurePenalty ?? "Check the printed penalty."}</dd>
+          </div>
+          {neutral ? (
+            <div className="outcome-neutral">
+              <dt>{neutral}</dt>
+              <dd>No slay and no penalty.</dd>
+            </div>
+          ) : null}
+        </dl>
+      </section>
+      <section className="monster-reward">
+        <h3>Reward after slaying</h3>
+        <p>
+          {card.passiveAbility ?? card.effect ?? "Check the printed reward."}
+        </p>
+      </section>
+    </div>
+  );
+}
+
+function CardDetail({
+  card: snapshot,
+  close,
+}: {
+  card: Card;
+  close: () => void;
+}) {
+  // Old saved rooms may predate expanded metadata. Inspect the reviewed catalog.
+  const card = CARD_BY_SLUG.get(snapshot.slug) ?? snapshot;
+  const monster = card.type === "monster";
+  return (
+    <Dialog label={card.name} onClose={close} wide={monster}>
+      <div className={`card-detail ${monster ? "monster-detail" : ""}`}>
         <div className="detail-art">
           <CardArtwork card={card} />
         </div>
-        <span className="eyebrow">
-          {title(card.type)}
-          {card.classes[0] ? ` · ${title(card.classes[0])}` : ""}
-        </span>
-        <h2>{card.name}</h2>
-        <p className="card-set-label">{cardSetName(card)}</p>
-        {card.rollRequirement ? (
-          <span className="roll-requirement">
-            <Dice5 size={16} /> Roll {card.rollRequirement}
+        <div className="detail-copy">
+          <span className="eyebrow">
+            {title(card.type)}
+            {card.classes[0] ? ` · ${title(card.classes[0])}` : ""}
           </span>
-        ) : null}
-        <p>
-          {card.effect ?? "Inspect this card’s printed rules before playing."}
-        </p>
-        {card.rules.map((rule) => (
-          <p className="card-rule" key={rule}>
-            {rule}
-          </p>
-        ))}
-        {card.imageUrl ? (
-          <a
-            className="source-image-link"
-            href={card.imageUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open original card image <ArrowRight size={13} />
-          </a>
-        ) : null}
+          <h2>{card.name}</h2>
+          <p className="card-set-label">{cardSetName(card)}</p>
+          {!monster && card.rollRequirement ? (
+            <span className="roll-requirement">
+              <Dice5 size={16} /> Roll {card.rollRequirement}
+            </span>
+          ) : null}
+          {monster ? (
+            <MonsterDetails card={card} />
+          ) : (
+            <p>
+              {card.effect ??
+                "Inspect this card’s printed rules before playing."}
+            </p>
+          )}
+          {card.rules.map((rule) => (
+            <p className="card-rule" key={rule}>
+              {rule}
+            </p>
+          ))}
+          {card.imageUrl ? (
+            <a
+              className="source-image-link"
+              href={card.imageUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open original card image <ArrowRight size={13} />
+            </a>
+          ) : null}
+        </div>
       </div>
     </Dialog>
   );

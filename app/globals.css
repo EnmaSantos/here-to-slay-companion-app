@@ -962,7 +962,7 @@ img {
 .card-detail .eyebrow {
   justify-content: center;
 }
-.card-detail > p {
+.detail-copy > p {
   color: #c3b8cd;
   font-size: 12px;
   line-height: 1.9;
@@ -1954,6 +1954,10 @@ img {
   width: min(26%, 150px);
 }
 .monster-row .card-caption {
+  display: flex;
+}
+.monster-row .card-caption > strong,
+.monster-row .card-caption > span:not(.monster-summary) {
   display: none;
 }
 .deck-row {
@@ -3164,7 +3168,7 @@ img {
     margin-bottom: 22px;
     max-width: 95%;
   }
-  .card-detail > p {
+  .detail-copy > p {
     font-size: 12px;
   }
   .library-controls {
@@ -3263,6 +3267,130 @@ img {
 .card-detail .card-set-label {
   color: var(--muted);
   font-size: 12px;
+}
+.monster-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.monster-summary > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gold);
+}
+.monster-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 26px;
+  text-align: left;
+  align-items: start;
+}
+.monster-detail .detail-art {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 70/120;
+}
+.monster-detail .eyebrow {
+  justify-content: flex-start;
+}
+.monster-details section {
+  margin: 20px 0;
+}
+.monster-details h3 {
+  font: 600 12px/1.5 var(--sans);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.monster-details p {
+  font-size: 12px;
+  color: #c3b8cd;
+  line-height: 1.7;
+  margin: 7px 0;
+}
+.monster-details .monster-note {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+.party-requirement-slots {
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+}
+.party-requirement-slots li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 9px;
+  font-size: 11px;
+}
+.party-requirement-slots small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.monster-outcomes {
+  margin: 10px 0;
+  display: grid;
+  gap: 7px;
+}
+.monster-outcomes > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.85fr) minmax(0, 1.15fr);
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  align-items: center;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.monster-outcomes dt {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 600;
+}
+.monster-outcomes dd {
+  margin: 0;
+  color: #d0c6d8;
+}
+.outcome-slay dt {
+  color: #b2d9b0;
+}
+.outcome-penalty dt {
+  color: #efb5a8;
+}
+.outcome-neutral dt {
+  color: var(--muted);
+}
+.monster-reward {
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+}
+@media (max-width: 600px) {
+  .monster-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .monster-detail .detail-art {
+    width: 130px;
+    margin: 0 auto 18px;
+  }
+  .monster-summary {
+    font-size: 9px;
+  }
 }
 .source-card-art {
   position: absolute;

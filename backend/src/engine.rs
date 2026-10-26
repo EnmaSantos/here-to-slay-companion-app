@@ -32,6 +32,18 @@ pub struct Card {
     pub effect: Option<String>,
     pub image_url: Option<String>,
     pub roll_requirement: Option<String>,
+    #[serde(default)]
+    pub requirements: Vec<String>,
+    #[serde(default)]
+    pub hero_requirement: Option<String>,
+    #[serde(default)]
+    pub slay_roll_requirement: Option<String>,
+    #[serde(default)]
+    pub failure_roll_requirement: Option<String>,
+    #[serde(default)]
+    pub failure_penalty: Option<String>,
+    #[serde(default)]
+    pub passive_ability: Option<String>,
     pub rules: Vec<String>,
     pub releases: Vec<Release>,
 }
@@ -344,8 +356,30 @@ fn select_verified_cards(source: &[Card]) -> Result<Vec<Card>, String> {
             }];
             card.sets = vec![set.id.clone()];
             card.name = approved.name;
+            if card.card_type == "monster" {
+                ensure(
+                    !card.requirements.is_empty()
+                        && [
+                            &card.hero_requirement,
+                            &card.slay_roll_requirement,
+                            &card.failure_roll_requirement,
+                            &card.failure_penalty,
+                            &card.passive_ability,
+                        ]
+                        .iter()
+                        .all(|value| value.as_ref().is_some_and(|s| !s.trim().is_empty())),
+                    "A reviewed monster is missing attack details.",
+                )?;
+            }
             if card.slug == "the-charismatic-song" {
                 card.classes = vec!["bard".into()];
+            }
+            // Dracos deliberately reverses the usual low-fail/high-slay rolls.
+            // The API labels its printed green/red rows as success/failure.
+            if card.slug == "dracos" {
+                card.slay_roll_requirement = Some("5-".into());
+                card.failure_roll_requirement = Some("8+".into());
+                card.failure_penalty = Some("SACRIFICE a Hero card".into());
             }
             cards.push(card);
         }
@@ -1043,6 +1077,45 @@ mod tests {
         );
         source[0].releases[0].quantity += 1;
         assert!(select_verified_cards(&source).is_err());
+    }
+    #[test]
+    fn monster_details_preserve_party_rolls_penalties_and_dracos_exception() {
+        let cards = catalog();
+        let monsters: Vec<_> = cards.iter().filter(|c| c.card_type == "monster").collect();
+        assert_eq!(monsters.len(), 19);
+        for card in &monsters {
+            assert!(!card.requirements.is_empty());
+            assert!(card.hero_requirement.is_some());
+            assert!(card.slay_roll_requirement.is_some());
+            assert!(card.failure_roll_requirement.is_some());
+            assert!(card.failure_penalty.is_some());
+            assert!(card.passive_ability.is_some());
+        }
+        let orthus = monsters.iter().find(|c| c.slug == "orthus").unwrap();
+        assert_eq!(orthus.requirements, ["wizard", "any-hero"]);
+        assert_eq!(orthus.slay_roll_requirement.as_deref(), Some("8+"));
+        assert_eq!(orthus.failure_penalty.as_deref(), Some("DISCARD 2 cards"));
+        let dracos = monsters.iter().find(|c| c.slug == "dracos").unwrap();
+        assert_eq!(dracos.slay_roll_requirement.as_deref(), Some("5-"));
+        assert_eq!(dracos.failure_roll_requirement.as_deref(), Some("8+"));
+        assert_eq!(
+            dracos.failure_penalty.as_deref(),
+            Some("SACRIFICE a Hero card")
+        );
+        let mut legacy = serde_json::to_value(orthus).unwrap();
+        for field in [
+            "requirements",
+            "heroRequirement",
+            "slayRollRequirement",
+            "failureRollRequirement",
+            "failurePenalty",
+            "passiveAbility",
+        ] {
+            legacy.as_object_mut().unwrap().remove(field);
+        }
+        let restored: Card = serde_json::from_value(legacy).unwrap();
+        assert!(restored.requirements.is_empty());
+        assert!(restored.slay_roll_requirement.is_none());
     }
     #[test]
     fn tiebreakers_never_escape_the_original_group() {

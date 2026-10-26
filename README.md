@@ -41,6 +41,7 @@ The Rust server persists development rooms in ignored `backend/.slay-data/`. It 
 - Draft leaders in that order. Leaders are unique; The Shadow Claw is excluded for two players.
 - Last picker takes the first gameplay turn; later turns follow the original seating order.
 - Deal five cards to each player and reveal three monsters. Only your own hand's card identities are transmitted to you.
+- Monster inspection shows required party slots, success and penalty thresholds, any neutral roll range, and the reward after slaying. Library/table captions summarize the party requirement and slay roll. Class slots accept a matching Leader or Hero; every slot uses a distinct card, and Any Hero slots cannot use Leaders. Dracos correctly succeeds on 5 or lower and penalizes 8 or higher, as printed.
 - Draw costs 1 AP. Discarding the entire hand and drawing five costs 3 AP. End turn passes immediately. Exhausted main decks reshuffle the discard pile when needed.
 - **Standard** (default): 120-second turns / 10-second challenges / 10-second modifiers.
 - **Quick**: 60-second turns / 10-second challenges / 5-second modifiers.
