@@ -1,0 +1,1006 @@
+{
+  "version": "retail-inventory-v1",
+  "reviewedOn": "2026-10-25",
+  "notes": "Names, types and physical copy counts cross-checked against the three linked published inventory lists. API suffixes such as (2) distinguish records, not printed card names. Reprint and promo sets are excluded. Image URLs continue to come from the read-only API.",
+  "sets": [
+    {
+      "id": "base-game",
+      "name": "Base game",
+      "sourceUrl": "https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_Base_Deck_-_Inventory_List",
+      "cards": [
+        {
+          "slug": "abyss-queen",
+          "name": "Abyss Queen",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "anuran-cauldron",
+          "name": "Anuran Cauldron",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "artic-aries",
+          "name": "Artic Aries",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "bad-axe",
+          "name": "Bad Axe",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "bard-mask",
+          "name": "Bard Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "bear-claw",
+          "name": "Bear Claw",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "beary-wise",
+          "name": "Beary Wise",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "bloodwing",
+          "name": "Bloodwing",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "bullseye",
+          "name": "Bullseye",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "bun-bun",
+          "name": "Bun Bun",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "buttons",
+          "name": "Buttons",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "call-to-the-fallen",
+          "name": "Call to the Fallen",
+          "type": "magic",
+          "quantity": 1
+        },
+        {
+          "slug": "calming-voice",
+          "name": "Calming Voice",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "challenge",
+          "name": "Challenge",
+          "type": "challenge",
+          "quantity": 14
+        },
+        {
+          "slug": "corrupted-sabretooth",
+          "name": "Corrupted Sabretooth",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "critical-boost",
+          "name": "Critical Boost",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "crowned-serpent",
+          "name": "Crowned Serpent",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "curse-of-the-snakes-eyes",
+          "name": "Curse of the Snake's Eyes",
+          "type": "item",
+          "quantity": 2
+        },
+        {
+          "slug": "dark-dragon-king",
+          "name": "Dark Dragon King",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "decoy-doll",
+          "name": "Decoy Doll",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "destructive-spell",
+          "name": "Destructive Spell",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "dodgy-dealer",
+          "name": "Dodgy Dealer",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "dracos",
+          "name": "Dracos",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "enchanted-spell",
+          "name": "Enchanted Spell",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "entangling-trap",
+          "name": "Entangling Trap",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "fighter-mask",
+          "name": "Fighter Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "fluffy",
+          "name": "Fluffy",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "forced-exchange",
+          "name": "Forced Exchange",
+          "type": "magic",
+          "quantity": 1
+        },
+        {
+          "slug": "forceful-winds",
+          "name": "Forceful Winds",
+          "type": "magic",
+          "quantity": 1
+        },
+        {
+          "slug": "fury-knuckle",
+          "name": "Fury Knuckle",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "fuzzy-cheeks",
+          "name": "Fuzzy Cheeks",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "greedy-cheeks",
+          "name": "Greedy Cheeks",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "guardian-mask",
+          "name": "Guardian Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "guiding-light",
+          "name": "Guiding Light",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "heavy-bear",
+          "name": "Heavy Bear",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "holy-curselifter",
+          "name": "Holy Curselifter",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "hook",
+          "name": "Hook",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "hopper",
+          "name": "Hopper",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "iron-resolve",
+          "name": "Iron Resolve",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "kit-napper",
+          "name": "Kit Napper",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "lookie-rookie",
+          "name": "Lookie Rookie",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "lucky-bucky",
+          "name": "Lucky Bucky",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "malamammoth",
+          "name": "Malamammoth",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "mega-slime",
+          "name": "Mega Slime",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "mellow-dee",
+          "name": "Mellow Dee",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "meowzio",
+          "name": "Meowzio",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "mighty-blade",
+          "name": "Mighty Blade",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-minus-4",
+          "name": "Modifier -4",
+          "type": "modifier",
+          "quantity": 4
+        },
+        {
+          "slug": "modifier-plus-1-minus-3",
+          "name": "Modifier +1/-3",
+          "type": "modifier",
+          "quantity": 4
+        },
+        {
+          "slug": "modifier-plus-2-minus-2",
+          "name": "Modifier +2/-2",
+          "type": "modifier",
+          "quantity": 9
+        },
+        {
+          "slug": "modifier-plus-3-minus-1",
+          "name": "Modifier +3/-1",
+          "type": "modifier",
+          "quantity": 4
+        },
+        {
+          "slug": "modifier-plus-4",
+          "name": "Modifier +4",
+          "type": "modifier",
+          "quantity": 4
+        },
+        {
+          "slug": "napping-nibbles",
+          "name": "Napping Nibbles",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "orthus",
+          "name": "Orthus",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "pan-chucks",
+          "name": "Pan Chucks",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "particularly-rusty-coin",
+          "name": "Particularly Rusty Coin",
+          "type": "item",
+          "quantity": 2
+        },
+        {
+          "slug": "peanut",
+          "name": "Peanut",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "plundering-puma",
+          "name": "Plundering Puma",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "qi-bear",
+          "name": "Qi Bear",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "quick-draw",
+          "name": "Quick Draw",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "radiant-horn",
+          "name": "Radiant Horn",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "ranger-mask",
+          "name": "Ranger Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "really-big-ring",
+          "name": "Really Big Ring",
+          "type": "item",
+          "quantity": 2
+        },
+        {
+          "slug": "rex-major",
+          "name": "Rex Major",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "sealing-key",
+          "name": "Sealing Key",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "serious-grey",
+          "name": "Serious Grey",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "sharp-fox",
+          "name": "Sharp Fox",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "shurikitty",
+          "name": "Shurikitty",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "silent-shadow",
+          "name": "Silent Shadow",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "slippery-paws",
+          "name": "Slippery Paws",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "sly-pickings",
+          "name": "Sly Pickings",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "smooth-mimimeow",
+          "name": "Smooth Mimimeow",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "snowball",
+          "name": "Snowball",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "spooky",
+          "name": "Spooky",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "suspiciously-shiny-coin",
+          "name": "Suspiciously Shiny Coin",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "terratuga",
+          "name": "Terratuga",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "the-charismatic-song",
+          "name": "The Charismatic Song",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-cloaked-sage",
+          "name": "The Cloaked Sage",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-divine-arrow",
+          "name": "The Divine Arrow",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-fist-of-reason",
+          "name": "The Fist of Reason",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-protecting-horn",
+          "name": "The Protecting Horn",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-shadow-claw",
+          "name": "The Shadow Claw",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "thief-mask",
+          "name": "Thief Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "tipsy-tootie",
+          "name": "Tipsy Tootie",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "titan-wyvern",
+          "name": "Titan Wyvern",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "tough-teddy",
+          "name": "Tough Teddy",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "vibrant-glow",
+          "name": "Vibrant Glow",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "warworn-owlbear",
+          "name": "Warworn Owlbear",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "whiskers",
+          "name": "Whiskers",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "wiggles",
+          "name": "Wiggles",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "wildshot",
+          "name": "Wildshot",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "wily-red",
+          "name": "Wily Red",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "winds-of-change",
+          "name": "Winds of Change",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "wise-shield",
+          "name": "Wise Shield",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "wizard-mask",
+          "name": "Wizard Mask",
+          "type": "item",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "warrior-and-druid",
+      "name": "Warriors & Druids",
+      "sourceUrl": "https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_-_Warrior_and_Druid_Expansion_-_Inventory_List",
+      "cards": [
+        {
+          "slug": "agile-dagger",
+          "name": "Agile Dagger",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "beast-call",
+          "name": "Beast Call",
+          "type": "magic",
+          "quantity": 1
+        },
+        {
+          "slug": "big-buckley",
+          "name": "Big Buckley",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "blinding-blade",
+          "name": "Blinding Blade",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "bottomless-bag",
+          "name": "Bottomless Bag",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "buck-omens",
+          "name": "Buck Omens",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "critical-fang",
+          "name": "Critical Fang",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "cursed-glove",
+          "name": "Cursed Glove",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "doe-fallow",
+          "name": "Doe Fallow",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "druid-challenge",
+          "name": "Druid Challenge",
+          "type": "challenge",
+          "quantity": 1
+        },
+        {
+          "slug": "druid-mask",
+          "name": "Druid Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "even-bigger-ring",
+          "name": "Even Bigger Ring",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "feral-dragon",
+          "name": "Feral Dragon",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "glowing-antler",
+          "name": "Glowing Antler",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "hardened-hunter",
+          "name": "Hardened Hunter",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "looting-lupo",
+          "name": "Looting Lupo",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "maegisty",
+          "name": "Maegisty",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "magus-moose",
+          "name": "Magus Moose",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "majestelk",
+          "name": "Majestelk",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-minus-4-2",
+          "name": "Modifier -4",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-plus-1-minus-1-2",
+          "name": "Modifier +1/-1",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-plus-2-minus-1",
+          "name": "Modifier +2/-1",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-plus-4-2",
+          "name": "Modifier +4",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "muscipula-rex",
+          "name": "Muscipula Rex",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "rapid-refresh",
+          "name": "Rapid Refresh",
+          "type": "magic",
+          "quantity": 1
+        },
+        {
+          "slug": "silent-shield",
+          "name": "Silent Shield",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "soul-tether",
+          "name": "Soul Tether",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "stagguard",
+          "name": "Stagguard",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "temporal-hourglass",
+          "name": "Temporal Hourglass",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "tenacious-timber",
+          "name": "Tenacious Timber",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "the-noble-shaman",
+          "name": "The Noble Shaman",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-piercing-howl",
+          "name": "The Piercing Howl",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "warrior-challenge",
+          "name": "Warrior Challenge",
+          "type": "challenge",
+          "quantity": 1
+        },
+        {
+          "slug": "warrior-mask",
+          "name": "Warrior Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "wolfgang-pack",
+          "name": "Wolfgang Pack",
+          "type": "hero",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "berserkers-and-necromancers",
+      "name": "Berserkers & Necromancers",
+      "sourceUrl": "https://www.unstablegameswiki.com/index.php?title=Here_To_Slay_Dragon_Berserkers_and_Necromancers_Expansion_-_Inventory_List",
+      "cards": [
+        {
+          "slug": "annihilator",
+          "name": "Annihilator",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "bark-hexer",
+          "name": "Bark Hexer",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "beholden-retriever",
+          "name": "Beholden Retriever",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "berserker-challenge",
+          "name": "Berserker Challenge",
+          "type": "challenge",
+          "quantity": 1
+        },
+        {
+          "slug": "berserker-mask",
+          "name": "Berserker Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "biggest-ring-ever",
+          "name": "Biggest Ring Ever",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "bone-collector",
+          "name": "Bone Collector",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "boston-terror",
+          "name": "Boston Terror",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "brawling-spirit",
+          "name": "Brawling Spirit",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "doombringer",
+          "name": "Doombringer",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "dragons-bile",
+          "name": "Dragon's Bile",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "goblet-of-caffeination",
+          "name": "Goblet of Caffeination",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "grim-pupper",
+          "name": "Grim Pupper",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "gruesome-gladiator",
+          "name": "Gruesome Gladiator",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "hollow-husk",
+          "name": "Hollow Husk",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "lightning-labrys",
+          "name": "Lightning Labrys",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "mass-sacrifice",
+          "name": "Mass Sacrifice",
+          "type": "magic",
+          "quantity": 2
+        },
+        {
+          "slug": "meowntain",
+          "name": "Meowntain",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-plus-2-minus-2-2",
+          "name": "Modifier +2/-2",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "modifier-plus-7",
+          "name": "Modifier +7",
+          "type": "modifier",
+          "quantity": 1
+        },
+        {
+          "slug": "necromancer-challenge",
+          "name": "Necromancer Challenge",
+          "type": "challenge",
+          "quantity": 1
+        },
+        {
+          "slug": "necromancer-mask",
+          "name": "Necromancer Mask",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "perfect-vessel",
+          "name": "Perfect Vessel",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "rabid-beast",
+          "name": "Rabid Beast",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "reptilian-ripper",
+          "name": "Reptilian Ripper",
+          "type": "monster",
+          "quantity": 1
+        },
+        {
+          "slug": "roaryal-guard",
+          "name": "Roaryal Guard",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "shadow-saint",
+          "name": "Shadow Saint",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "silver-lining",
+          "name": "Silver Lining",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "soulbound-grimoire",
+          "name": "Soulbound Grimoire",
+          "type": "item",
+          "quantity": 1
+        },
+        {
+          "slug": "the-gnawing-dread",
+          "name": "The Gnawing Dread",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "the-raging-manticore",
+          "name": "The Raging Manticore",
+          "type": "party-leader",
+          "quantity": 1
+        },
+        {
+          "slug": "unbridled-fury",
+          "name": "Unbridled Fury",
+          "type": "hero",
+          "quantity": 1
+        },
+        {
+          "slug": "vicious-wildcat",
+          "name": "Vicious Wildcat",
+          "type": "hero",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

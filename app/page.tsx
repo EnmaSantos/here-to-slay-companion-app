@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { SkeletonPreview } from "./_sites-preview/SkeletonPreview";
+import { GameApp } from "@/components/game-ui";
 
 export const metadata: Metadata = {
-  title: "Your site is taking shape",
+  title: "Here to Slay — Your next game night",
   description:
-    "Codex is building the first version. It’ll appear here automatically when it’s ready.",
-  other: {
-    "codex-preview": "development",
-  },
+    "Gather your party, roll for your leader, and bring a little delightful chaos to game night. Private tables for 2–6 friends.",
 };
 
 export default function Home() {
-  return <SkeletonPreview />;
+  return <GameApp />;
 }

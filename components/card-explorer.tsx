@@ -37,7 +37,7 @@ async function fetchCards(filters: {
   const response = await fetch(
     `${HERE_TO_SLAY_API}/api/v1/cards?${parameters.toString()}`,
   );
-  const body = await response.json();
+  const body = await response.json() as { data: Card[]; pagination: Pagination; error?: { message?: string } };
 
   if (!response.ok) {
     throw new Error(body.error?.message ?? "The card catalog could not be loaded.");

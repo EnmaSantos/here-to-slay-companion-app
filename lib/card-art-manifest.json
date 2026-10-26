@@ -1,0 +1,1634 @@
+{
+  "cards": {
+    "abyss-queen": {
+      "src": "/cards/abyss-queen-c85b53429958.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4b/HtS-Base-213-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4b/HtS-Base-213-2E.png?20240324130208",
+      "sha256": "c85b53429958150ae2904e9d87c8ab729a23aa981e7b5e25ced24c78aac18d7d",
+      "bytes": 829343,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "agile-dagger": {
+      "src": "/cards/agile-dagger-1a724e82ad6a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/16/HtS-WarDruid-028-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/16/HtS-WarDruid-028-V.png?20220205175654",
+      "sha256": "1a724e82ad6ae41b40916bcf9030544858640486e9ab464d5917bb30d3cc3ae7",
+      "bytes": 344769,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "annihilator": {
+      "src": "/cards/annihilator-1ff16f4fcd42.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/93/HtS-BersNecr-012.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/93/HtS-BersNecr-012.png?20220117195452",
+      "sha256": "1ff16f4fcd42da9d4a9f6b068abb701eb7189a8cb93c1420b20d61599659717e",
+      "bytes": 345944,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "anuran-cauldron": {
+      "src": "/cards/anuran-cauldron-0339b45abce0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/79/HtS-Base-211-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/79/HtS-Base-211-2E.png?20240324130159",
+      "sha256": "0339b45abce076526ff034879c21fce80ba55ada81c54b48686758949cd5de6a",
+      "bytes": 799668,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "artic-aries": {
+      "src": "/cards/artic-aries-bc11a78e6785.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f7/HtS-Base-210-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f7/HtS-Base-210-2E.png?20240324130153",
+      "sha256": "bc11a78e67854155e11d319841740dd20f21ccc7c9e1a119a861baf8e1ad5276",
+      "bytes": 825542,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "bad-axe": {
+      "src": "/cards/bad-axe-53ed46887582.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/b7/HtS-Base-034-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/b7/HtS-Base-034-2E.png?20240324124606",
+      "sha256": "53ed46887582f54042cb7f8b144d07e294be31a83d1784f1223bf42d6ada6585",
+      "bytes": 462523,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "bard-mask": {
+      "src": "/cards/bard-mask-7bcfb40d14f2.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/98/HtS-Base-004-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/98/HtS-Base-004-2E.png?20240324124809",
+      "sha256": "7bcfb40d14f2c1fc19481c2aa9576b6b3247d919c6fe9de6e20a5ec31ec74895",
+      "bytes": 379068,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "bark-hexer": {
+      "src": "/cards/bark-hexer-9f72e392c706.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/2c/HtS-BersNecr-003.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/2c/HtS-BersNecr-003.png?20220117195806",
+      "sha256": "9f72e392c706d35ebae22452971a3b147c81368d0d521a2421b0ef694bd85494",
+      "bytes": 359854,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "bear-claw": {
+      "src": "/cards/bear-claw-26a832841346.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/6f/HtS-Base-033-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/6f/HtS-Base-033-2E.png?20240324124600",
+      "sha256": "26a8328413466c52e5ac5423726220743abe65b89c79e9fd44ed814ba3acad9b",
+      "bytes": 458318,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "beary-wise": {
+      "src": "/cards/beary-wise-a3806bdd8fa5.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/74/HtS-Base-030-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/74/HtS-Base-030-2E.png?20240324124542",
+      "sha256": "a3806bdd8fa57b51e71f1d4097043ed40c210084b8c3908fddcce95f5c600a0f",
+      "bytes": 464158,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "beast-call": {
+      "src": "/cards/beast-call-cb2598ef3081.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/ad/HtS-WarDruid-002-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/ad/HtS-WarDruid-002-2.png?20260427132949",
+      "sha256": "cb2598ef30810441a432a8703862c3beb02722d3e4ba5a82c79f79dc689290ff",
+      "bytes": 1635864,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "beholden-retriever": {
+      "src": "/cards/beholden-retriever-acc1b6b0347a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/99/HtS-BersNecr-008.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/99/HtS-BersNecr-008.png?20220117195425",
+      "sha256": "acc1b6b0347ab60f4683f4eee8d711607005400a8ff099f1784d60d3b4e3e087",
+      "bytes": 382488,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "berserker-challenge": {
+      "src": "/cards/berserker-challenge-fd910941ecf0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/96/HtS-BersNecr-018.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/96/HtS-BersNecr-018.png?20220117195519",
+      "sha256": "fd910941ecf0e1d8f2eee489541b2ea8cede7c7293ba01cd13ab837fd6dd193a",
+      "bytes": 328924,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "berserker-mask": {
+      "src": "/cards/berserker-mask-3dd83522e259.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/ee/HtS-BersNecr-024.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/ee/HtS-BersNecr-024.png?20220521182950",
+      "sha256": "3dd83522e2595a3f3744658e6009aae3c068d799ab3c38217a91b385275415e0",
+      "bytes": 302715,
+      "format": "png",
+      "width": 600,
+      "height": 834
+    },
+    "big-buckley": {
+      "src": "/cards/big-buckley-42a2e24ae0f6.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-WarDruid-020-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-WarDruid-020-2.png?20260427133903",
+      "sha256": "42a2e24ae0f6bad10abf35aa8a5e8bd4528e82e73200b96668505837113bc8c1",
+      "bytes": 1536845,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "biggest-ring-ever": {
+      "src": "/cards/biggest-ring-ever-c0946196d7e8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-BersNecr-026.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-BersNecr-026.png?20220117195604",
+      "sha256": "c0946196d7e8a276c95924c9b91ab61c3a67756dbb7c68328027955faeb36972",
+      "bytes": 339752,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "blinding-blade": {
+      "src": "/cards/blinding-blade-c38da323e55c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/b1/HtS-WarDruid-026-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/b1/HtS-WarDruid-026-2.png?20260427133957",
+      "sha256": "c38da323e55c54a65526e20a899ef0e4fa3515f2162e9ba57c3ee24e4ed3b081",
+      "bytes": 1600417,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "bloodwing": {
+      "src": "/cards/bloodwing-2bdf2154e98a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/5d/HtS-Base-212-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/5/5d/HtS-Base-212-2E.png?20240324130203",
+      "sha256": "2bdf2154e98aba6c03f8ae9760158e5f0ac3784a74d4880580be6a4de9ec8613",
+      "bytes": 832485,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "bone-collector": {
+      "src": "/cards/bone-collector-af71261e3c1e.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/35/HtS-BersNecr-005.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/35/HtS-BersNecr-005.png?20220117195408",
+      "sha256": "af71261e3c1e3449e8122c0ef4d963ab10c6e849b645ef1d2ee7cf1e21fcb5d7",
+      "bytes": 348632,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "boston-terror": {
+      "src": "/cards/boston-terror-0f196c4b04de.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-002.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-002.png?20220117195759",
+      "sha256": "0f196c4b04debfbe87f295e405069242832118a95d1f2829a82ae1c694eea226",
+      "bytes": 403773,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "bottomless-bag": {
+      "src": "/cards/bottomless-bag-2f08e9ab42ce.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e8/HtS-WarDruid-007-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e8/HtS-WarDruid-007-2.png?20260427133022",
+      "sha256": "2f08e9ab42cefd0851ab4194f69211f136264f6f1b3e4c1b9e6b2ef0f9d35131",
+      "bytes": 1664475,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "brawling-spirit": {
+      "src": "/cards/brawling-spirit-0e160a06f344.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/8/86/HtS-BersNecr-010.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/8/86/HtS-BersNecr-010.png?20220117195439",
+      "sha256": "0e160a06f3443981de61676ab3218d3a8fdd9066a7c28d9e1840d0327cdafee0",
+      "bytes": 365661,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "buck-omens": {
+      "src": "/cards/buck-omens-714952e3ee9a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/14/HtS-WarDruid-018-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/14/HtS-WarDruid-018-2.png?20260427133845",
+      "sha256": "714952e3ee9a4e63379cb7d6c814f372f35589f1e973d6988a6648395f3f1484",
+      "bytes": 1524274,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "bullseye": {
+      "src": "/cards/bullseye-265984472d83.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-055-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-055-2E.png?20240324130339",
+      "sha256": "265984472d835b98afc5fd4778d69595771d04b0849aa4cd474b18a6844733ac",
+      "bytes": 511778,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "bun-bun": {
+      "src": "/cards/bun-bun-50b15df32f99.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/ce/HtS-Base-068-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/ce/HtS-Base-068-2E.png?20240324130507",
+      "sha256": "50b15df32f99f6af13989de66bfdeb0174f7a30b1039d7811b87c6428eea1727",
+      "bytes": 476624,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "buttons": {
+      "src": "/cards/buttons-a961cf97127b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/9b/HtS-Base-072-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/9b/HtS-Base-072-2E.png?20240324130524",
+      "sha256": "a961cf97127b44b00e71c259d5f1df1e0e439e81bcf9fa2f701d5e9446561c10",
+      "bytes": 486794,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "call-to-the-fallen": {
+      "src": "/cards/call-to-the-fallen-931b894ae8b8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-Base-019-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-Base-019-2E.png?20240324125036",
+      "sha256": "931b894ae8b8df042f3cd9f1a5b0c42113e59f8fa1fd2767e4767377d8f4e0bd",
+      "bytes": 408614,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "calming-voice": {
+      "src": "/cards/calming-voice-0ff1942fa091.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/ac/HtS-Base-043-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/ac/HtS-Base-043-2E.png?20240324124632",
+      "sha256": "0ff1942fa0917fc80623449d615da7caac346f2ebde065ef74ab414281206c0b",
+      "bytes": 494162,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "challenge": {
+      "src": "/cards/challenge-037a9ac2e9cc.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/45/HtS-Base-026-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/45/HtS-Base-026-2E.png?20240324124451",
+      "sha256": "037a9ac2e9ccddb6c57ca33b7e5213905812abc3edb92ce4daccb579406b9d30",
+      "bytes": 445665,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "corrupted-sabretooth": {
+      "src": "/cards/corrupted-sabretooth-21d602457779.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/71/HtS-Base-207-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/71/HtS-Base-207-2E.png?20240324130137",
+      "sha256": "21d6024577792d14bbfebf7e5e82fd548d23daeea1ee5690290d64c5d74a56e3",
+      "bytes": 850030,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "critical-boost": {
+      "src": "/cards/critical-boost-7f319543bb16.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d4/HtS-Base-017-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d4/HtS-Base-017-2E.png?20240324125026",
+      "sha256": "7f319543bb16e7c5a635895bc5108abf8be1dbcea2869e708056127ed67f4b0d",
+      "bytes": 386855,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "critical-fang": {
+      "src": "/cards/critical-fang-14c711c18048.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/b7/HtS-WarDruid-029-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/b7/HtS-WarDruid-029-2.png?20260427134024",
+      "sha256": "14c711c180489a23ca2f1622011627d88da6eb128ade1f3666ee95aae18d36de",
+      "bytes": 1544793,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "crowned-serpent": {
+      "src": "/cards/crowned-serpent-f3ad4c5bc146.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/0b/HtS-Base-205-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/0b/HtS-Base-205-2E.png?20240324130126",
+      "sha256": "f3ad4c5bc146048ec09432b4c7e15b8c259dc59e02017c2230c0f77f4ca02f8a",
+      "bytes": 872062,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "curse-of-the-snakes-eyes": {
+      "src": "/cards/curse-of-the-snakes-eyes-10138f50446c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/38/HtS-Base-002-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/38/HtS-Base-002-2E.png?20240324124758",
+      "sha256": "10138f50446cf30a9ee7ccb8f56989333537cd26b16d96070a0c7b812c97641e",
+      "bytes": 397767,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "cursed-glove": {
+      "src": "/cards/cursed-glove-ac5f63b8ea09.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/ef/HtS-WarDruid-009-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/ef/HtS-WarDruid-009-2.png?20260427133037",
+      "sha256": "ac5f63b8ea099f4d3af9df2aeae85ee956e0d3e072330281de5dc7c7f2b106a6",
+      "bytes": 1624802,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "dark-dragon-king": {
+      "src": "/cards/dark-dragon-king-b5c753e75d10.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-Base-203-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-Base-203-2E.png?20240324130116",
+      "sha256": "b5c753e75d101e6bb2913d52131a1d6e093d5bb3d4b78932b4666a07dad8bcd9",
+      "bytes": 840757,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "decoy-doll": {
+      "src": "/cards/decoy-doll-473b8fa9ee5f.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/ca/HtS-Base-012-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/ca/HtS-Base-012-2E.png?20240324124848",
+      "sha256": "473b8fa9ee5fe1352a6225c48d234052a08dcdb45fd474535fa8b937df2921d4",
+      "bytes": 403709,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "destructive-spell": {
+      "src": "/cards/destructive-spell-5ebe15ce589f.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f6/HtS-Base-018-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f6/HtS-Base-018-2E.png?20240324125030",
+      "sha256": "5ebe15ce589f16082e8045b67cb867cfeefb225e7550987c6b0167bdfd01efd4",
+      "bytes": 367085,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "dodgy-dealer": {
+      "src": "/cards/dodgy-dealer-2f1b40e7263c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/64/HtS-Base-041-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/64/HtS-Base-041-2E.png?20240324124400",
+      "sha256": "2f1b40e7263c955e15bd662c46f825836da58a96045f1d8b9fa6abc76ca0381c",
+      "bytes": 428248,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "doe-fallow": {
+      "src": "/cards/doe-fallow-4b83ba9ad959.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/27/HtS-WarDruid-017-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/27/HtS-WarDruid-017-V.png?20220205175630",
+      "sha256": "4b83ba9ad959264b28ba25acb7f5b371d444f9a38b24837ce550b56ff3cc1be5",
+      "bytes": 345449,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "doombringer": {
+      "src": "/cards/doombringer-dbb76a41ace5.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/29/HtS-BersNecr-202.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/29/HtS-BersNecr-202.png?20220117195644",
+      "sha256": "dbb76a41ace576220a01010c65b83b3002596237b7b7d9947798ef792ffb052f",
+      "bytes": 540328,
+      "format": "png",
+      "width": 650,
+      "height": 1115
+    },
+    "dracos": {
+      "src": "/cards/dracos-784a15e4ffca.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/60/HtS-Base-201-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/60/HtS-Base-201-2E.png?20240324130104",
+      "sha256": "784a15e4ffcac6ca4e0afdf1aa436ff42cb30c51ea89eeff3b0dd99923d60024",
+      "bytes": 866056,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "dragons-bile": {
+      "src": "/cards/dragons-bile-25ee2b93581d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-BersNecr-028.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-BersNecr-028.png?20220117195612",
+      "sha256": "25ee2b93581d5df7f4f2933d97ef63d85272f99137b0f995fd0098fce8ef9090",
+      "bytes": 331549,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "druid-challenge": {
+      "src": "/cards/druid-challenge-75ed5533ac9c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4c/HtS-WarDruid-015-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4c/HtS-WarDruid-015-2.png?20260427133822",
+      "sha256": "75ed5533ac9c4c8e51a5617be824a23dbbf0b4f8034dcf57db580ee8c52346c3",
+      "bytes": 1310516,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "druid-mask": {
+      "src": "/cards/druid-mask-1b805dc4958a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/1f/HtS-WarDruid-006-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/1f/HtS-WarDruid-006-2.png?20260427133015",
+      "sha256": "1b805dc4958a67fd897331b79cfc6fe87553598007825aee85c93ba75ac6a0b0",
+      "bytes": 1616562,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "enchanted-spell": {
+      "src": "/cards/enchanted-spell-670a91cf884d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/c8/HtS-Base-013-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/c8/HtS-Base-013-2E.png?20240324125008",
+      "sha256": "670a91cf884dc9014ba3a3a0578759e95f6b31b3eabf0a323156db7699359c59",
+      "bytes": 363363,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "entangling-trap": {
+      "src": "/cards/entangling-trap-31695b50b202.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/9c/HtS-Base-015-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/9c/HtS-Base-015-2E.png?20240324125016",
+      "sha256": "31695b50b202b36da6cfb1a1139a03171bcbbb55ffe1eee4144515514c052298",
+      "bytes": 393334,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "even-bigger-ring": {
+      "src": "/cards/even-bigger-ring-e653088cae21.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-WarDruid-003-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-WarDruid-003-2.png?20260427132955",
+      "sha256": "e653088cae21db755d61926a45377cd62fc24375dba15c151528b58dcd151833",
+      "bytes": 1598187,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "feral-dragon": {
+      "src": "/cards/feral-dragon-4bf247d55500.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/59/HtS-WarDruid-202-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/thumb/5/59/HtS-WarDruid-202-2.png/694px-HtS-WarDruid-202-2.png?20260427134139",
+      "sha256": "4bf247d55500482b11e4c1c0c8c2efa97aa8621a0cf2b207866ce170edc87377",
+      "bytes": 1839829,
+      "format": "png",
+      "width": 694,
+      "height": 1198
+    },
+    "fighter-mask": {
+      "src": "/cards/fighter-mask-bda32df9aa48.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/67/HtS-Base-007-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/67/HtS-Base-007-2E.png?20240324124823",
+      "sha256": "bda32df9aa48df1ec6c847291deb2e3ebe8d2f81b95a593a0fb5d931cf09aa6f",
+      "bytes": 439975,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "fluffy": {
+      "src": "/cards/fluffy-a6e0c7e61e11.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a0/HtS-Base-071-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a0/HtS-Base-071-2E.png?20240324130519",
+      "sha256": "a6e0c7e61e11f916e8f29e4e369d6e3188d1779b02318f81aee486c2ae4fa591",
+      "bytes": 451826,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "forced-exchange": {
+      "src": "/cards/forced-exchange-ac285f2cbded.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/cb/HtS-Base-020-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/cb/HtS-Base-020-2E.png?20240324125041",
+      "sha256": "ac285f2cbdede179b573c1b925fa8035726d1f7759a3ad67ebcf7b8764f3e4f2",
+      "bytes": 425620,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "forceful-winds": {
+      "src": "/cards/forceful-winds-448357222a07.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4d/HtS-Base-014-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4d/HtS-Base-014-2E.png?20240324125013",
+      "sha256": "448357222a079419c2cf298f0f435b18f67682fb02c0d451cd6aa06491df24c3",
+      "bytes": 445964,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "fury-knuckle": {
+      "src": "/cards/fury-knuckle-c58431bb44b8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d6/HtS-Base-032-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d6/HtS-Base-032-2E.png?20240324124556",
+      "sha256": "c58431bb44b886b16ca96cbfb8569256fcb3962ce77740aba38f83d55c383c17",
+      "bytes": 470947,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "fuzzy-cheeks": {
+      "src": "/cards/fuzzy-cheeks-a98bbf940749.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-Base-039-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-Base-039-2E.png?20240324124349",
+      "sha256": "a98bbf940749d0f7495fea9e092740a00730ab2ac2ca2a8cf61259ecb4caca9c",
+      "bytes": 464871,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "glowing-antler": {
+      "src": "/cards/glowing-antler-294c83021f49.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/8/8e/HtS-WarDruid-019-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/8/8e/HtS-WarDruid-019-2.png?20260427133854",
+      "sha256": "294c83021f49c30207b0c01d20686d05aa073ffd234f4c9d03ffc70f3a60509e",
+      "bytes": 1510497,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "goblet-of-caffeination": {
+      "src": "/cards/goblet-of-caffeination-be5c91643018.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-BersNecr-025.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-BersNecr-025.png?20220117195558",
+      "sha256": "be5c91643018833b6ce005ecf6c7e4daf09725e937ce15af3a14cd625884e4a0",
+      "bytes": 367797,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "greedy-cheeks": {
+      "src": "/cards/greedy-cheeks-dfd03aa42aac.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/1d/HtS-Base-038-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/1d/HtS-Base-038-2E.png?20240324124344",
+      "sha256": "dfd03aa42aac657f3019ad29797d788fec3608cd317c4e80da7e4ba91110098d",
+      "bytes": 449047,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "grim-pupper": {
+      "src": "/cards/grim-pupper-9482bcb7807e.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/70/HtS-BersNecr-001.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/70/HtS-BersNecr-001.png?20220117195342",
+      "sha256": "9482bcb7807e8e338f97c8087283398dd08f669af6a3de32e3656cfda5750aa6",
+      "bytes": 338744,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "gruesome-gladiator": {
+      "src": "/cards/gruesome-gladiator-6b1a7189c270.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/76/HtS-BersNecr-016.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/76/HtS-BersNecr-016.png?20220117195703",
+      "sha256": "6b1a7189c2708356e5876dd00813a1381ffa604bda0a19d28622aba6d07f98d2",
+      "bytes": 407492,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "guardian-mask": {
+      "src": "/cards/guardian-mask-28e6fad86b0d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f3/HtS-Base-008-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f3/HtS-Base-008-2E.png?20240324124829",
+      "sha256": "28e6fad86b0dde3c341023bb93a25ca9c7c8c522e19321f2d32079cdf59178c8",
+      "bytes": 408556,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "guiding-light": {
+      "src": "/cards/guiding-light-2f27a0e3a6cd.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/cf/HtS-Base-050-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/cf/HtS-Base-050-V.png?20220205175600",
+      "sha256": "2f27a0e3a6cd2c8bb543723dc4f8efd450549ec62217bb1bd9540f7030053e80",
+      "bytes": 359659,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "hardened-hunter": {
+      "src": "/cards/hardened-hunter-23051e599e2e.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e5/HtS-WarDruid-025-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e5/HtS-WarDruid-025-2.png?20260427133950",
+      "sha256": "23051e599e2e2961368708b65bdad7a11fc25e5527d773d99c4d27f37722e9e8",
+      "bytes": 1678477,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "heavy-bear": {
+      "src": "/cards/heavy-bear-297021490957.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/32/HtS-Base-028-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/32/HtS-Base-028-2E.png?20240324124531",
+      "sha256": "29702149095762934d5b4609cc446e7fd880f92cd3a47f1796e6531a347ced5a",
+      "bytes": 451612,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "hollow-husk": {
+      "src": "/cards/hollow-husk-ff090132caba.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/1e/HtS-BersNecr-006.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/1e/HtS-BersNecr-006.png?20220117195415",
+      "sha256": "ff090132cabac2b151f593f941a64f02b94f6bc4b07e703ef7604080c7028fd3",
+      "bytes": 385884,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "holy-curselifter": {
+      "src": "/cards/holy-curselifter-a2cb719df27b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/ba/HtS-Base-048-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/ba/HtS-Base-048-2E.png?20240324124657",
+      "sha256": "a2cb719df27ba2e19069625e6167d31d4bbc7a77d21a0410f941d2dc80ba9e99",
+      "bytes": 505925,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "hook": {
+      "src": "/cards/hook-dfe6224950a0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f7/HtS-Base-057-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f7/HtS-Base-057-2E.png?20240324130349",
+      "sha256": "dfe6224950a067bd823e97bedd031a93735b79bd8ad6f52cc1c83dbc76d9393f",
+      "bytes": 512284,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "hopper": {
+      "src": "/cards/hopper-59253cecb7fb.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/0f/HtS-Base-074-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/0f/HtS-Base-074-V.png?20220205175534",
+      "sha256": "59253cecb7fbb09b18dfc4a7cfa3a4858c72ab2938558dac58778a30c862d73a",
+      "bytes": 376786,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "iron-resolve": {
+      "src": "/cards/iron-resolve-b610f1b7f1ec.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/3c/HtS-Base-047-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/3c/HtS-Base-047-2E.png?20240324124650",
+      "sha256": "b610f1b7f1ecad96edbfbbbec18d440d6f01a7f5d832fa4dadc630cffe42353e",
+      "bytes": 466406,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "kit-napper": {
+      "src": "/cards/kit-napper-e00b992d3808.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/76/HtS-Base-065-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/76/HtS-Base-065-2E.png?20240328162459",
+      "sha256": "e00b992d3808cd3b3ab7bb9d819a1acd0255fe9b2fa58502359c754aede1c67c",
+      "bytes": 479648,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "lightning-labrys": {
+      "src": "/cards/lightning-labrys-36e498a5b342.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/24/HtS-BersNecr-021.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/24/HtS-BersNecr-021.png?20220117195534",
+      "sha256": "36e498a5b342714f3a0d4c9aaff8f6c8871ad9b18c83e9f8701467a640e6eec9",
+      "bytes": 339973,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "lookie-rookie": {
+      "src": "/cards/lookie-rookie-ffbfb3282f44.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/5b/HtS-Base-054-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/5/5b/HtS-Base-054-V.png?20220205175506",
+      "sha256": "ffbfb3282f44ee4bf310697484df3cfae85ffcb5c626a96ceb0804b0d94c2466",
+      "bytes": 365276,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "looting-lupo": {
+      "src": "/cards/looting-lupo-1c0970d52fc8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-WarDruid-024-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-WarDruid-024-2.png?20260427133940",
+      "sha256": "1c0970d52fc8d89cde1fb862a0a4c2cd8805aa7b48fb4de3057051546a2d5d1e",
+      "bytes": 1674485,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "lucky-bucky": {
+      "src": "/cards/lucky-bucky-5f6f266d31c2.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fe/HtS-Base-042-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fe/HtS-Base-042-2E.png?20240324124405",
+      "sha256": "5f6f266d31c288a09920394d79b96d5986b09c468278e9fcaf1eea2d808ba0d2",
+      "bytes": 476002,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "maegisty": {
+      "src": "/cards/maegisty-e37db06dc6c4.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-WarDruid-023-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-WarDruid-023-2.png?20260427133931",
+      "sha256": "e37db06dc6c443ffa90c5d26d9066acdd8cb49b46de563bdce44afc29abbcf6b",
+      "bytes": 1496457,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "magus-moose": {
+      "src": "/cards/magus-moose-d822147ca3a0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/8/8f/HtS-WarDruid-016-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/8/8f/HtS-WarDruid-016-2.png?20260427133830",
+      "sha256": "d822147ca3a04c07142339f020471012e15ad3ddc6e168d4e60515139c373059",
+      "bytes": 1555398,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "majestelk": {
+      "src": "/cards/majestelk-0181d899affd.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/43/HtS-WarDruid-022-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/43/HtS-WarDruid-022-2.png?20260427133923",
+      "sha256": "0181d899affd942fb51f8320a0bf81ba4a3aa0b1dbde7eda77d8d5fd8ff3a90e",
+      "bytes": 1551984,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "malamammoth": {
+      "src": "/cards/malamammoth-64440442c685.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a7/HtS-Base-214-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a7/HtS-Base-214-2E.png?20240324130214",
+      "sha256": "64440442c68578f009aec29a3284cb9e6508d6ba6ffd2b1d44fe9cb1c06f5c7c",
+      "bytes": 815199,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "mass-sacrifice": {
+      "src": "/cards/mass-sacrifice-81024a4e3cc1.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/0b/HtS-BersNecr-022.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/0b/HtS-BersNecr-022.png?20220117195540",
+      "sha256": "81024a4e3cc1dc3c8c5eccd2d620f7faf947998c7cb697b3d23a7d6abfbeea6c",
+      "bytes": 319135,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "mega-slime": {
+      "src": "/cards/mega-slime-05780d54a144.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f6/HtS-Base-208-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f6/HtS-Base-208-2E.png?20240324130143",
+      "sha256": "05780d54a144fb19b6bcc852dcfc6509ae9c46f1687c51133f89cb7e4de44668",
+      "bytes": 817029,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "mellow-dee": {
+      "src": "/cards/mellow-dee-46b112592727.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/af/HtS-Base-037-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/af/HtS-Base-037-V.png?20220205175435",
+      "sha256": "46b1125927271e9cfe76223168ab02fe7f4abf4da3c65f8b610cab244e956e3f",
+      "bytes": 353052,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "meowntain": {
+      "src": "/cards/meowntain-5ee45158e8f7.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/8/89/HtS-BersNecr-013.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/8/89/HtS-BersNecr-013.png?20220117195501",
+      "sha256": "5ee45158e8f7dadacf42705468371e1b76124dc58983ec34b4218224e18f507c",
+      "bytes": 429444,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "meowzio": {
+      "src": "/cards/meowzio-64b1f2f10f4e.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/b5/HtS-Base-062-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/b5/HtS-Base-062-2E.png?20240328162442",
+      "sha256": "64b1f2f10f4ee3f19f3247a2dfc1d425138843bfe92e5ca57813aa9b29f2cb45",
+      "bytes": 447731,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "mighty-blade": {
+      "src": "/cards/mighty-blade-9a7af0570703.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fd/HtS-Base-045-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fd/HtS-Base-045-2E.png?20240324124641",
+      "sha256": "9a7af057070387b91741da046fad0ed6f356224d84d48a92df6a8409332e492e",
+      "bytes": 494295,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-minus-4": {
+      "src": "/cards/modifier-minus-4-6f0ff05bd3a7.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fd/HtS-Base-022-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fd/HtS-Base-022-2E.png?20240324125226",
+      "sha256": "6f0ff05bd3a70f95833b0a50c6d8fd809c7433330e192faf18c6517f86279be1",
+      "bytes": 355722,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-minus-4-2": {
+      "src": "/cards/modifier-minus-4-2-9c8c7447a37d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-WarDruid-011-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/4f/HtS-WarDruid-011-2.png?20260427133737",
+      "sha256": "9c8c7447a37dba0af506011fa809dd2498daefea779bf29054f5e9e93ac569ea",
+      "bytes": 1243297,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "modifier-plus-1-minus-1-2": {
+      "src": "/cards/modifier-plus-1-minus-1-2-af0daa347ffa.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/09/HtS-WarDruid-012-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/09/HtS-WarDruid-012-2.png?20260427133746",
+      "sha256": "af0daa347ffa80c24d0cc76eccdcc4d3bd0cfc2aa49353dad05ba17da5f37b41",
+      "bytes": 1250447,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "modifier-plus-1-minus-3": {
+      "src": "/cards/modifier-plus-1-minus-3-105610a20e09.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/6c/HtS-Base-024-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/6c/HtS-Base-024-2E.png?20240324125236",
+      "sha256": "105610a20e09c5c7b70340a6e8e184bbcdb7c6d2fac55ee8c436d79d7dc6a318",
+      "bytes": 417177,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-plus-2-minus-1": {
+      "src": "/cards/modifier-plus-2-minus-1-9280ab14d4cf.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/16/HtS-WarDruid-013-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/16/HtS-WarDruid-013-2.png?20260427133755",
+      "sha256": "9280ab14d4cfd5e1d02b3b76d0805a504fc1e1d982c297825078e677ae3f97de",
+      "bytes": 1253773,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "modifier-plus-2-minus-2": {
+      "src": "/cards/modifier-plus-2-minus-2-6f6495b2f7b8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e4/HtS-Base-021-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e4/HtS-Base-021-2E.png?20240324125222",
+      "sha256": "6f6495b2f7b8bd7bbe5ff2d4c51fa75eec6a7db3bd6efedf385f4fa4ad4bee53",
+      "bytes": 378556,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-plus-2-minus-2-2": {
+      "src": "/cards/modifier-plus-2-minus-2-2-649519324ee8.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-BersNecr-019.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-BersNecr-019.png?20220117195524",
+      "sha256": "649519324ee8b8e45b12958e3bd335bbd9282edb27b787d5db64d47b2ec71ac2",
+      "bytes": 221673,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "modifier-plus-3-minus-1": {
+      "src": "/cards/modifier-plus-3-minus-1-3bb0e672b765.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d0/HtS-Base-025-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d0/HtS-Base-025-2E.png?20240324125242",
+      "sha256": "3bb0e672b76572ddb2e19848c002c5ed062856dab54fb6958d5bbbc5eaad6e53",
+      "bytes": 371172,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-plus-4": {
+      "src": "/cards/modifier-plus-4-e7a7d8a61509.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/28/HtS-Base-023-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/28/HtS-Base-023-2E.png?20240324125231",
+      "sha256": "e7a7d8a61509d46dc727482db7999a63cc0e1d764a0732dfc1c2e27759249f1b",
+      "bytes": 361183,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "modifier-plus-4-2": {
+      "src": "/cards/modifier-plus-4-2-037670ab2e81.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/dd/HtS-WarDruid-010-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/dd/HtS-WarDruid-010-2.png?20260427133045",
+      "sha256": "037670ab2e8125b90e16e99f61efe27a6dc6d42144c1362382931e9a1b137770",
+      "bytes": 1242985,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "modifier-plus-7": {
+      "src": "/cards/modifier-plus-7-d97d9032e903.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-020.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-020.png?20220117195530",
+      "sha256": "d97d9032e903d597617133b34b3256f160d7cc2a7b38d39ef0a8dabf600bf0af",
+      "bytes": 227374,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "muscipula-rex": {
+      "src": "/cards/muscipula-rex-ea6db3287826.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a5/HtS-WarDruid-201-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/thumb/a/a5/HtS-WarDruid-201-2.png/694px-HtS-WarDruid-201-2.png?20260427134128",
+      "sha256": "ea6db3287826d6fd23bb1b5a6853333569360ca36743922d49f271eb3de55389",
+      "bytes": 1818931,
+      "format": "png",
+      "width": 694,
+      "height": 1198
+    },
+    "napping-nibbles": {
+      "src": "/cards/napping-nibbles-b6ff91ab826d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/78/HtS-Base-036-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/78/HtS-Base-036-2E.png?20240324124335",
+      "sha256": "b6ff91ab826d11e62a078c6d5a3d13e3ef0e870c1ab8599beeb8b12947963b6e",
+      "bytes": 443483,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "necromancer-challenge": {
+      "src": "/cards/necromancer-challenge-22a0f42b7b27.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/04/HtS-BersNecr-017.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/04/HtS-BersNecr-017.png?20220117195650",
+      "sha256": "22a0f42b7b27e748ebb629d1bd1bb3ee83f8ad33eae890fb2ff384ac1258d749",
+      "bytes": 329242,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "necromancer-mask": {
+      "src": "/cards/necromancer-mask-24d897e190b9.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-BersNecr-023.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/aa/HtS-BersNecr-023.png?20220521182859",
+      "sha256": "24d897e190b9a76e248bc50db7b2176be1698ad942bf766234326c8af6534ad2",
+      "bytes": 284577,
+      "format": "png",
+      "width": 600,
+      "height": 834
+    },
+    "orthus": {
+      "src": "/cards/orthus-254899dfa6ab.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/0a/HtS-Base-202-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/0a/HtS-Base-202-2E.png?20240324130110",
+      "sha256": "254899dfa6ab172572870f2fda54516624e952945c1720f58c134422730bf014",
+      "bytes": 808072,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "pan-chucks": {
+      "src": "/cards/pan-chucks-89cfc47670bd.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/63/HtS-Base-027-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/63/HtS-Base-027-V.png?20220205175408",
+      "sha256": "89cfc47670bdc38dae67e41c68139d0925393c9a91414843d9b38a5b9858c6e4",
+      "bytes": 294678,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "particularly-rusty-coin": {
+      "src": "/cards/particularly-rusty-coin-9cc94f201dcc.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/55/HtS-Base-011-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/5/55/HtS-Base-011-2E.png?20240324124844",
+      "sha256": "9cc94f201dcca40d1f42119886730ee7fc6290ee6ac82bea6f2b5c450a0d8b4c",
+      "bytes": 433012,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "peanut": {
+      "src": "/cards/peanut-1e4c3787a0fc.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-035-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-035-2E.png?20240324124332",
+      "sha256": "1e4c3787a0fc952f27987c5d80990221aaa42af9b18983b1077934a1e083b2ee",
+      "bytes": 465781,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "perfect-vessel": {
+      "src": "/cards/perfect-vessel-1fef7a71f62a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/24/HtS-BersNecr-004.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/24/HtS-BersNecr-004.png?20220117195815",
+      "sha256": "1fef7a71f62ac6c08031deab991d9e3fa0c4e05cd137fe23b62e1940187ffc3a",
+      "bytes": 363598,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "plundering-puma": {
+      "src": "/cards/plundering-puma-b88251742ae7.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-Base-060-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-Base-060-2E.png?20240328162433",
+      "sha256": "b88251742ae709842d6148b4b7d5629cccabb8d7fd6acd173ddd73e87550f881",
+      "bytes": 444547,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "qi-bear": {
+      "src": "/cards/qi-bear-722cd19d1b50.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/46/HtS-Base-029-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/46/HtS-Base-029-2E.png?20240324124536",
+      "sha256": "722cd19d1b50b386a6f8f9d394988239965c7f9fd726930c31b5c6d746e714f7",
+      "bytes": 433723,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "quick-draw": {
+      "src": "/cards/quick-draw-4c6a8d15478d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-Base-056-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-Base-056-2E.png?20240324130343",
+      "sha256": "4c6a8d15478d919c209d1d8a12fcf42b0593a1c8a92b9db3c3ad96942e5ee7a1",
+      "bytes": 451331,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "rabid-beast": {
+      "src": "/cards/rabid-beast-120526702926.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/dc/HtS-BersNecr-015.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/dc/HtS-BersNecr-015.png?20220117195514",
+      "sha256": "120526702926349249cf3489dc853ec4b3830dd7cda280a9153c1f32225c8232",
+      "bytes": 401273,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "radiant-horn": {
+      "src": "/cards/radiant-horn-344ee58fd24d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-046-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-046-2E.png?20240324124646",
+      "sha256": "344ee58fd24d1ffd2e9dcae3478d0f30a3f86acba6f38ce7cc5beeb06a101d0f",
+      "bytes": 513772,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "ranger-mask": {
+      "src": "/cards/ranger-mask-4303fc736b9a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/69/HtS-Base-005-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/69/HtS-Base-005-2E.png?20240324124814",
+      "sha256": "4303fc736b9a1de318c360f4bc12be0216206a6ad89ce5d67f33be2bbc22f50f",
+      "bytes": 425240,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "rapid-refresh": {
+      "src": "/cards/rapid-refresh-d772088b4fee.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fb/HtS-WarDruid-001-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fb/HtS-WarDruid-001-2.png?20260427132944",
+      "sha256": "d772088b4fee313d65f0b57b9ff75011ad1b20d74ca51df6516a8477646576ec",
+      "bytes": 1652062,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "really-big-ring": {
+      "src": "/cards/really-big-ring-1ad2ca32f9e2.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-010-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-010-2E.png?20240324124838",
+      "sha256": "1ad2ca32f9e2b722aeec804ec00bec0b393c4fbf9b9605d407cb0c889737b729",
+      "bytes": 417961,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "reptilian-ripper": {
+      "src": "/cards/reptilian-ripper-ce61ff43ac91.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/38/HtS-BersNecr-201.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/38/HtS-BersNecr-201.png?20220117195639",
+      "sha256": "ce61ff43ac91523ee734c96ec8de207a451f80dc4030ec4307dbffedc2ebe0fc",
+      "bytes": 495663,
+      "format": "png",
+      "width": 650,
+      "height": 1115
+    },
+    "rex-major": {
+      "src": "/cards/rex-major-db0bc7bc68fc.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a3/HtS-Base-215-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a3/HtS-Base-215-2E.png?20240324130222",
+      "sha256": "db0bc7bc68fcf7a659d6d92adf3692b61c81d2963e43d58a1446b2b8c94c49e6",
+      "bytes": 809609,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "roaryal-guard": {
+      "src": "/cards/roaryal-guard-50ecad4af713.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fe/HtS-BersNecr-009.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fe/HtS-BersNecr-009.png?20220117195435",
+      "sha256": "50ecad4af7130814790cd66bc1d6dd19cec0af8b2747107439e1832464ec0925",
+      "bytes": 374981,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "sealing-key": {
+      "src": "/cards/sealing-key-2066c3734bea.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-001-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/06/HtS-Base-001-2E.png?20240324124753",
+      "sha256": "2066c3734beab7edf0d7d714ba97a2b107eb4382b1b2702745057bd305277a24",
+      "bytes": 390781,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "serious-grey": {
+      "src": "/cards/serious-grey-e3bda390a6fb.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/77/HtS-Base-058-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/77/HtS-Base-058-2E.png?20240324130354",
+      "sha256": "e3bda390a6fb7e87e62094756ba3c1278cda0271f5472e8c2afc86cf85700e78",
+      "bytes": 430951,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "shadow-saint": {
+      "src": "/cards/shadow-saint-94a0b96e3833.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-BersNecr-007.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/3b/HtS-BersNecr-007.png?20220117195420",
+      "sha256": "94a0b96e3833171cf538ddcc5ab7a18ceaddae68be9271e5f601a11097fd9f9b",
+      "bytes": 371786,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "sharp-fox": {
+      "src": "/cards/sharp-fox-6a6e66812317.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/64/HtS-Base-051-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/64/HtS-Base-051-2E.png?20240324130317",
+      "sha256": "6a6e668123176053fd7c8bdc1d9c9df649cf16e1328cd1bdf55351901b14b93f",
+      "bytes": 423171,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "shurikitty": {
+      "src": "/cards/shurikitty-51903a848f1d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/2b/HtS-Base-061-V.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/2b/HtS-Base-061-V.png?20220205175336",
+      "sha256": "51903a848f1de00bb76fab101d960b6e5206c867dba00e8cf106db55e18a0a38",
+      "bytes": 365261,
+      "format": "png",
+      "width": 650,
+      "height": 908
+    },
+    "silent-shadow": {
+      "src": "/cards/silent-shadow-6977b8d62208.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e4/HtS-Base-066-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e4/HtS-Base-066-2E.png?20240328162505",
+      "sha256": "6977b8d62208226414d795a9690f8052eb59282b35d926476c72eb4cd04ee85b",
+      "bytes": 460106,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "silent-shield": {
+      "src": "/cards/silent-shield-749d3412a4ef.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/1/11/HtS-WarDruid-031-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/1/11/HtS-WarDruid-031-2.png?20260427134039",
+      "sha256": "749d3412a4ef2c285f3a0017dc75f213c0dfc50cd0f944c0417c459ed43c27d1",
+      "bytes": 1705441,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "silver-lining": {
+      "src": "/cards/silver-lining-5e7199bd670f.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f5/HtS-BersNecr-027.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f5/HtS-BersNecr-027.png?20220117195608",
+      "sha256": "5e7199bd670ff06724d68fa387515da82184683ef2feb429a4bd81bf890e04ce",
+      "bytes": 328326,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "slippery-paws": {
+      "src": "/cards/slippery-paws-dfb22499024b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/0/08/HtS-Base-063-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/0/08/HtS-Base-063-2E.png?20240328162447",
+      "sha256": "dfb22499024ba0f5602311bbabc6d8659f4b53218c32a41d2567563c91050808",
+      "bytes": 429852,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "sly-pickings": {
+      "src": "/cards/sly-pickings-c1b264978709.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/c6/HtS-Base-064-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/c6/HtS-Base-064-2E.png?20240328162452",
+      "sha256": "c1b264978709b4177941b089d4965306c99b0b3694546e6a3b4ccdcbdfd4e610",
+      "bytes": 462658,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "smooth-mimimeow": {
+      "src": "/cards/smooth-mimimeow-808346c8b4c6.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/c2/HtS-Base-059-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/c2/HtS-Base-059-2E.png?20240328162430",
+      "sha256": "808346c8b4c629a4e704ef8de1c93939d5a2799392c2b54df9e54a5bd3300183",
+      "bytes": 462067,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "snowball": {
+      "src": "/cards/snowball-1a5d67a96d32.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/bf/HtS-Base-067-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/bf/HtS-Base-067-2E.png?20240324130501",
+      "sha256": "1a5d67a96d326692d182e8083043d4e6c18a19c1b73d5f19ed22796c10e268ba",
+      "bytes": 483593,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "soul-tether": {
+      "src": "/cards/soul-tether-052dd5757548.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/f5/HtS-WarDruid-008-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/f5/HtS-WarDruid-008-2.png?20260427133030",
+      "sha256": "052dd5757548b3b000abfa12dbc65bb6cee4221f337347b02f7c263507f5bc05",
+      "bytes": 1621733,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "soulbound-grimoire": {
+      "src": "/cards/soulbound-grimoire-90208c630ca2.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7e/HtS-BersNecr-029.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7e/HtS-BersNecr-029.png?20220117195616",
+      "sha256": "90208c630ca2d7c28287aaab87e63c6e1218aed6bddccc5843771c16831bd562",
+      "bytes": 363307,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "spooky": {
+      "src": "/cards/spooky-5c153c4ef645.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e8/HtS-Base-070-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e8/HtS-Base-070-2E.png?20240324130514",
+      "sha256": "5c153c4ef645665cbbb51d43ebc3a80e7905de24f60c2d834f03c3145fccc500",
+      "bytes": 466666,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "stagguard": {
+      "src": "/cards/stagguard-df5ced62eb81.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/c2/HtS-WarDruid-021-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/c2/HtS-WarDruid-021-2.png?20260427133914",
+      "sha256": "df5ced62eb81210e669bb7a5c8820411845505bd0990133f2685bb499d7e053f",
+      "bytes": 1559832,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "suspiciously-shiny-coin": {
+      "src": "/cards/suspiciously-shiny-coin-ce49cdb00125.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/6c/HtS-Base-003-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/6c/HtS-Base-003-2E.png?20240324124805",
+      "sha256": "ce49cdb00125b4f87344a2121c9e2f8f42154208dfd37ca9e65f1359ead3c213",
+      "bytes": 424129,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "temporal-hourglass": {
+      "src": "/cards/temporal-hourglass-ad65497bc2ba.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7b/HtS-WarDruid-004-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7b/HtS-WarDruid-004-2.png?20260427133000",
+      "sha256": "ad65497bc2babb34db087c63770deb4d91a5d8f2c649a45566995cdb7d40acf4",
+      "bytes": 1606920,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "tenacious-timber": {
+      "src": "/cards/tenacious-timber-3d012556c1e2.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/97/HtS-WarDruid-030-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/97/HtS-WarDruid-030-2.png?20260427134031",
+      "sha256": "3d012556c1e2e0473a78c9965a91e9f769c88b13b16216270552716fcc9c6cb6",
+      "bytes": 1691653,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "terratuga": {
+      "src": "/cards/terratuga-ac946deabb2d.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/41/HtS-Base-204-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/41/HtS-Base-204-2E.png?20240324130121",
+      "sha256": "ac946deabb2d84e87a8374ccdd76ee5dcb9d6aae7c5312a9f9e9f9a1aabef515",
+      "bytes": 798014,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "the-charismatic-song": {
+      "src": "/cards/the-charismatic-song-4b5f486ba7e6.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-Base-106-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a6/HtS-Base-106-pm.png?20250913202232",
+      "sha256": "4b5f486ba7e651098a291b1de484ec4b634b87c5ffc9b33fda7dfc49b8a0cd06",
+      "bytes": 1120137,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-cloaked-sage": {
+      "src": "/cards/the-cloaked-sage-f80f2092cee9.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/cb/HtS-Base-104-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/cb/HtS-Base-104-pm.png?20250913202229",
+      "sha256": "f80f2092cee9bc8181a72b146628bf2d1a956de476ffb896ef2c2c738b8cad47",
+      "bytes": 1124316,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-divine-arrow": {
+      "src": "/cards/the-divine-arrow-a5e97f824fe4.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e1/HtS-Base-105-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e1/HtS-Base-105-pm.png?20250913202232",
+      "sha256": "a5e97f824fe4081e42dab78ab316560cc6faa1deed284294a06809b206921df2",
+      "bytes": 1132431,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-fist-of-reason": {
+      "src": "/cards/the-fist-of-reason-b964171a699a.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/4/45/HtS-Base-103-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/4/45/HtS-Base-103-pm.png?20250913202228",
+      "sha256": "b964171a699a2c7a7ba5464809b1d3c73094b21b40ee65116079b1cd8f509d64",
+      "bytes": 1131938,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-gnawing-dread": {
+      "src": "/cards/the-gnawing-dread-97f5cbc007d3.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/90/HtS-BersNecr-101-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/90/HtS-BersNecr-101-pm.png?20250913202242",
+      "sha256": "97f5cbc007d3ab80861560511edffa19f48f9d4efc73e827bdae0e258ebced51",
+      "bytes": 1129319,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-noble-shaman": {
+      "src": "/cards/the-noble-shaman-9dc5f33ddf10.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/6b/HtS-WarDruid-102-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/6b/HtS-WarDruid-102-pm.png?20250913183524",
+      "sha256": "9dc5f33ddf1013cf24f8bc81a1f78000ab646886dc666113ed44944f5985bc5e",
+      "bytes": 1143592,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-piercing-howl": {
+      "src": "/cards/the-piercing-howl-6e20733ded2b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/f/fc/HtS-WarDruid-101-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/f/fc/HtS-WarDruid-101-pm.png?20250913202248",
+      "sha256": "6e20733ded2b3e8037c1e7fb3af91811d7e91fd5f628d7979eb1d988eb86767d",
+      "bytes": 1069386,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-protecting-horn": {
+      "src": "/cards/the-protecting-horn-23ad19c49261.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/6/6f/HtS-Base-101-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/6/6f/HtS-Base-101-pm.png?20250913202221",
+      "sha256": "23ad19c492613b41b4267cf6871005f42aed2184339e76d9c5c5eb4a6596c2f0",
+      "bytes": 1081367,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-raging-manticore": {
+      "src": "/cards/the-raging-manticore-9d9b503ef969.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/52/HtS-BersNecr-102-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/5/52/HtS-BersNecr-102-pm.png?20250913202247",
+      "sha256": "9d9b503ef969a3e81d4e9212c03a489b3dad6fbb0d7cb84944bfd24a8602216b",
+      "bytes": 1157028,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "the-shadow-claw": {
+      "src": "/cards/the-shadow-claw-dd5e06d18996.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-Base-102-pm.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7d/HtS-Base-102-pm.png?20250913184620",
+      "sha256": "dd5e06d18996f37485b52517779c8bdaf7ea091e8344f37457695531a6354373",
+      "bytes": 1136988,
+      "format": "png",
+      "width": 500,
+      "height": 853
+    },
+    "thief-mask": {
+      "src": "/cards/thief-mask-830d7a79c1bb.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/79/HtS-Base-009-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/79/HtS-Base-009-2E.png?20240324124834",
+      "sha256": "830d7a79c1bb92fc40c9f6985cfde43a0eaa629031b2b78601a09da9b36c4b32",
+      "bytes": 401756,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "tipsy-tootie": {
+      "src": "/cards/tipsy-tootie-1a31e763a034.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/5/5d/HtS-Base-040-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/5/5d/HtS-Base-040-2E.png?20240324124354",
+      "sha256": "1a31e763a034aa600fe9c61696e16ae8e365200a5667c8940eec23a4f048c199",
+      "bytes": 457504,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "titan-wyvern": {
+      "src": "/cards/titan-wyvern-0338e4759930.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-206-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d8/HtS-Base-206-2E.png?20240324130133",
+      "sha256": "0338e47599306a15658fa18cabc772340a699c276a480ef5e9362f5948b63397",
+      "bytes": 820625,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "tough-teddy": {
+      "src": "/cards/tough-teddy-d8662cae5987.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/ba/HtS-Base-031-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/ba/HtS-Base-031-2E.png?20240324124551",
+      "sha256": "d8662cae59878ddd0d25c093fe1c6b9bec4e1f8b43f4afe3f8ca6201ddc472da",
+      "bytes": 443844,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "unbridled-fury": {
+      "src": "/cards/unbridled-fury-5e44865004b3.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/c/c5/HtS-BersNecr-011.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/c/c5/HtS-BersNecr-011.png?20220117195444",
+      "sha256": "5e44865004b31c80abad4784f8d90e462783cb9683c6b344f47025adc2c9fe0a",
+      "bytes": 380227,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "vibrant-glow": {
+      "src": "/cards/vibrant-glow-6e0f21b76d5c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/b/bd/HtS-Base-049-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/b/bd/HtS-Base-049-2E.png?20240324124703",
+      "sha256": "6e0f21b76d5c773337e1a0f1362b67a733ea3cddeb79118d44520bb44a35a394",
+      "bytes": 481394,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "vicious-wildcat": {
+      "src": "/cards/vicious-wildcat-62bd64b2ded7.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-014.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/db/HtS-BersNecr-014.png?20220117195506",
+      "sha256": "62bd64b2ded7d215fa9fa8d1c9841adb9d4a9f5a55f873c596af543bafe09ef3",
+      "bytes": 381157,
+      "format": "png",
+      "width": 650,
+      "height": 904
+    },
+    "warrior-challenge": {
+      "src": "/cards/warrior-challenge-c987317fcbc9.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/3/36/HtS-WarDruid-014-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/3/36/HtS-WarDruid-014-2.png?20260427133813",
+      "sha256": "c987317fcbc9ad2b4db18538878ff691512eb22b05f8590e47d5774f276e0d1e",
+      "bytes": 1363822,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "warrior-mask": {
+      "src": "/cards/warrior-mask-ee6e6478e84f.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/2b/HtS-WarDruid-005-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/2b/HtS-WarDruid-005-2.png?20260427133006",
+      "sha256": "ee6e6478e84fa21f4abaf3e38260f148bcdae1a53f19a0fa04ce99ae524e287e",
+      "bytes": 1552466,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    },
+    "warworn-owlbear": {
+      "src": "/cards/warworn-owlbear-4e1a8a192a29.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/8/8e/HtS-Base-209-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/8/8e/HtS-Base-209-2E.png?20240324130148",
+      "sha256": "4e1a8a192a29857cdf778a8e35a6a8e120f2063d372872ca5f3ba498b48ce766",
+      "bytes": 813781,
+      "format": "png",
+      "width": 550,
+      "height": 949
+    },
+    "whiskers": {
+      "src": "/cards/whiskers-7123e97de45c.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/91/HtS-Base-073-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/91/HtS-Base-073-2E.png?20240324130529",
+      "sha256": "7123e97de45c5ceb009677a6a3af7643fb7e9f979dbe5b1d2f017f13b53689a0",
+      "bytes": 463643,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wiggles": {
+      "src": "/cards/wiggles-cec9e24b9913.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/da/HtS-Base-069-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/da/HtS-Base-069-2E.png?20240324130510",
+      "sha256": "cec9e24b9913cf46b5cc57f231974580ab590557a4e3323ac49c31322f57f70a",
+      "bytes": 485149,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wildshot": {
+      "src": "/cards/wildshot-f064496867dd.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/a/a3/HtS-Base-052-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/a/a3/HtS-Base-052-2E.png?20240324130321",
+      "sha256": "f064496867ddb054fd8da7c4819070177169c5e6a6f4dcdd4becae5c9e129874",
+      "bytes": 458851,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wily-red": {
+      "src": "/cards/wily-red-cff40859cdf4.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/2/2a/HtS-Base-053-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/2/2a/HtS-Base-053-2E.png?20240324130326",
+      "sha256": "cff40859cdf408b3566feaccba4eea4d3c32052f35700d65ef2ffe409d78bfa9",
+      "bytes": 476700,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "winds-of-change": {
+      "src": "/cards/winds-of-change-2a921e8798d0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-Base-016-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/d/d7/HtS-Base-016-2E.png?20240324125021",
+      "sha256": "2a921e8798d0238195de179813c248ebe1bfcb2c7830a4a218ae90015a9418ab",
+      "bytes": 417431,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wise-shield": {
+      "src": "/cards/wise-shield-2fe50cfb79c0.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/e/e9/HtS-Base-044-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/e/e9/HtS-Base-044-2E.png?20240324124636",
+      "sha256": "2fe50cfb79c0b1e7e06fc7e9a5b6fb5eabd79a3f14526d80369fde90134d7390",
+      "bytes": 532750,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wizard-mask": {
+      "src": "/cards/wizard-mask-012dea0a641b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/9/98/HtS-Base-006-2E.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/9/98/HtS-Base-006-2E.png?20240324124818",
+      "sha256": "012dea0a641bfc7632d7fbe2c9d4a581390130cf14cca835d1f9882496b244a7",
+      "bytes": 392983,
+      "format": "png",
+      "width": 496,
+      "height": 694
+    },
+    "wolfgang-pack": {
+      "src": "/cards/wolfgang-pack-11039f66eb3b.png",
+      "sourceUrl": "https://www.unstablegameswiki.com/images/7/7a/HtS-WarDruid-027-2.png",
+      "assetUrl": "https://www.unstablegameswiki.com/images/7/7a/HtS-WarDruid-027-2.png?20260427134008",
+      "sha256": "11039f66eb3b0912e601bbd269411a0e63fb453b5359f2d76ef4e6648d289e4e",
+      "bytes": 1674375,
+      "format": "png",
+      "width": 700,
+      "height": 976
+    }
+  }
+}
